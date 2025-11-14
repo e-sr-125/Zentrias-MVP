@@ -192,7 +192,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
       </section>
 
       {/* Start Your Collaboration Form Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section id="collaborator-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-2xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-center font-sans">

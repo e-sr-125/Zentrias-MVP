@@ -493,7 +493,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* Access the Investor Hub Form Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section id="investor-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
         <div className="max-w-2xl mx-auto">
           <div className="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-indigo-400/30 p-8 sm:p-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white leading-tight font-sans text-center">

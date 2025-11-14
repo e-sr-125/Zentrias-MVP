@@ -2,11 +2,9 @@
 
 import { usePathname } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
-import { useRouter } from 'next/navigation';
 
 export default function FloatingCTA() {
   const pathname = usePathname();
-  const router = useRouter();
 
   const getCTAText = () => {
     if (pathname.startsWith('/investors')) {
@@ -22,14 +20,22 @@ export default function FloatingCTA() {
   };
 
   const handleClick = () => {
-    if (pathname.startsWith('/investors')) {
-      window.location.href = 'mailto:investors@zentrais.com?subject=Investor Interest';
-    } else if (pathname.startsWith('/user')) {
-      router.push('/user');
-    } else if (pathname.startsWith('/media')) {
-      window.location.href = 'mailto:collaborators@zentrais.com?subject=Join as Zenzer';
-    } else if (pathname.startsWith('/collaborator')) {
-      window.location.href = 'mailto:collaborators@zentrais.com?subject=Start Collaboration';
+    // Hacer scroll suave hacia el formulario correspondiente
+    const formId = pathname.startsWith('/investors') 
+      ? 'investor-form'
+      : pathname.startsWith('/user')
+      ? 'waitlist-form'
+      : pathname.startsWith('/media')
+      ? 'media-form'
+      : pathname.startsWith('/collaborator')
+      ? 'collaborator-form'
+      : null;
+
+    if (formId) {
+      const formElement = document.getElementById(formId);
+      if (formElement) {
+        formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 
