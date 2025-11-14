@@ -4,7 +4,7 @@ export const translations: Record<Language, Record<string, string>> = {
   en: {
     // Homepage
     'home.greeting': 'Good Morning',
-    'home.title': 'WELCOME TO ZENTRAIS',
+    'home.title': 'Welcome to Zentrais!',
     'home.card.user.title': "I'M A USER",
     'home.card.user.desc': 'Join our beta and be among the first to experience the future.',
     'home.card.investor.title': "I'M AN INVESTOR",
@@ -186,7 +186,7 @@ export const translations: Record<Language, Record<string, string>> = {
   es: {
     // Homepage
     'home.greeting': 'Buenos Días',
-    'home.title': 'BIENVENIDO A ZENTRAIS',
+    'home.title': 'Bienvenido a Zentrais!',
     'home.card.user.title': 'SOY USUARIO',
     'home.card.user.desc': 'Únete a nuestra beta y sé de los primeros en experimentar el futuro.',
     'home.card.investor.title': 'SOY INVERSOR',
@@ -368,7 +368,7 @@ export const translations: Record<Language, Record<string, string>> = {
   fr: {
     // Homepage
     'home.greeting': 'Bonjour',
-    'home.title': 'BIENVENUE CHEZ ZENTRAIS',
+    'home.title': 'Bienvenue chez Zentrais!',
     'home.card.user.title': 'JE SUIS UTILISATEUR',
     'home.card.user.desc': 'Rejoignez notre bêta et soyez parmi les premiers à découvrir l\'avenir.',
     'home.card.investor.title': 'JE SUIS INVESTISSEUR',
@@ -417,7 +417,7 @@ export const translations: Record<Language, Record<string, string>> = {
   de: {
     // Homepage
     'home.greeting': 'Guten Morgen',
-    'home.title': 'WILLKOMMEN BEI ZENTRAIS',
+    'home.title': 'Willkommen bei Zentrais!',
     'home.card.user.title': 'ICH BIN BENUTZER',
     'home.card.user.desc': 'Treten Sie unserer Beta bei und seien Sie unter den Ersten, die die Zukunft erleben.',
     'home.card.investor.title': 'ICH BIN INVESTOR',
@@ -466,7 +466,7 @@ export const translations: Record<Language, Record<string, string>> = {
   pt: {
     // Homepage
     'home.greeting': 'Bom Dia',
-    'home.title': 'BEM-VINDO AO ZENTRAIS',
+    'home.title': 'Bem-vindo ao Zentrais!',
     'home.card.user.title': 'SOU USUÁRIO',
     'home.card.user.desc': 'Junte-se ao nosso beta e esteja entre os primeiros a experimentar o futuro.',
     'home.card.investor.title': 'SOU INVESTIDOR',

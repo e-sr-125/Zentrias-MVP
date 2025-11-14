@@ -53,7 +53,7 @@ export default function HomePage() {
         <h2 className="text-base sm:text-lg font-semibold mb-2 text-white/90 tracking-wide drop-shadow-lg font-sans">
           {t('home.greeting')}
         </h2>
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-10 text-white tracking-wider drop-shadow-2xl uppercase font-sans">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-10 text-white tracking-wider drop-shadow-2xl font-sans">
           {t('home.title')}
         </h1>
       </div>
