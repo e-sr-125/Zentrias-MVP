@@ -102,7 +102,7 @@ export default function InvestorsPage() {
       name: 'Levi Ezagui',
       role: 'Founder, CEO & Chief Vision Officer',
       bio: "Drives Zentrais' global vision and scale — turning the Integrity Economy from concept into infrastructure.",
-      image: "/Levi Ezagui Picture #1.jpg",
+      image: "/Levi Ezagui Picture 1.jpg",
     },
     {
       name: 'Antonio Lovera',
@@ -114,13 +114,13 @@ export default function InvestorsPage() {
       name: 'David Shagalov',
       role: 'Co-Founder, COO & Chief Integrity Officer',
       bio: 'Builds ethical systems and operational frameworks that keep integrity measurable, actionable, and alive.',
-      image: "/David Shagalov Picture #2.jpg",
+      image: "/David Shagalov Picture 2.jpg",
     },
     {
       name: 'Declan O\'Beirne',
       role: 'CFO & Chief Prosperity Officer',
       bio: 'Aligns finance with purpose — driving transparency, growth, and sustainable value across the Integrity Economy.',
-      image: "/Declan O'Beirne  Picture #1.jpg",
+      image: "/Declan O'Beirne Picture 1.jpg",
     },
   ];
 

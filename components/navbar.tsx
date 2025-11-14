@@ -25,11 +25,16 @@ export default function Navbar() {
     <nav 
       className={`w-full ${
         isHomepage 
-          ? 'backdrop-blur-md shadow-sm border-a' 
-          : 'bg-slate-900/95 backdrop-blur-lg shadow-lg border-b border-white/10'
+          ? 'backdrop-blur-sm shadow-sm border-b border-white/5' 
+          : 'bg-slate-900/90 backdrop-blur-sm shadow-lg border-b border-white/10'
       } ${
         isSticky ? 'fixed top-0 left-0 right-0 z-50' : ''
       }`}
+      style={!isHomepage ? {
+        background: 'rgba(15, 23, 42, 0.85)',
+        backdropFilter: 'blur(8px) saturate(180%)',
+        WebkitBackdropFilter: 'blur(8px) saturate(180%)',
+      } : undefined}
     >
       <div className="flex justify-between items-center py-1.5 px-4 sm:px-6">
         {isHomepage ? (
