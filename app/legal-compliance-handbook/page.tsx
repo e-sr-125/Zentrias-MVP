@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function LegalComplianceHandbookPage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -44,25 +46,25 @@ export default function LegalComplianceHandbookPage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              ZENTRAIS LEGAL & COMPLIANCE HANDBOOK
+              {t('legal.handbook.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-sans mb-4">
-              Nov 15, 2025
+              {t('legal.handbook.date')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 font-sans">
-              Version 1.0 — Effective 11/15/2025
+              {t('legal.handbook.version')}
             </p>
           </div>
 
           {/* Version and Scope */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              This handbook consolidates all essential legal, privacy, compliance, governance, and risk documentation into a single authoritative reference for:
+              {t('legal.handbook.scope.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4 mb-4">
               <li>Users</li>
@@ -73,30 +75,30 @@ export default function LegalComplianceHandbookPage() {
               <li>Advisory/legal review</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              This is the master document to be placed inside the Investor Data Room, linked on the website footer, and shared with partners.
+              {t('legal.handbook.scope.master')}
             </p>
           </div>
 
           {/* Section 0 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              0. INTRODUCTION
+              {t('legal.handbook.section0.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is a human-AI ecosystem built on three pillars:
+              {t('legal.handbook.section0.desc')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-4 font-bold">
-              Truth. Trust. Transparency.
+              {t('legal.handbook.section0.pillars')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              This handbook outlines how we protect users, comply with global laws, secure systems, govern AI, and operate with integrity. It also defines expectations for users, contributors, partners, and internal teams.
+              {t('legal.handbook.section0.outline')}
             </p>
           </div>
 
           {/* Section 1 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              1. CORE LEGAL DOCUMENTS
+              {t('legal.handbook.section1.title')}
             </h2>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">

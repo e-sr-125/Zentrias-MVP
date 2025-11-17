@@ -1,11 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Link from 'next/link';
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
 
-export default function LegalCenterPage() {
+export default function ContactPage() {
   const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
@@ -52,36 +51,13 @@ export default function LegalCenterPage() {
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              {t('legal.center.title')}
+              Contact
             </h1>
           </div>
 
-          {/* Buttons Section */}
-          <div className="flex flex-col items-center justify-center gap-6 mt-16">
-            <Link 
-              href="/dpa"
-              className="w-full max-w-md px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-white/20 rounded-lg text-white font-sans text-base sm:text-lg transition-colors duration-300 text-center"
-            >
-              {t('legal.center.dpa')}
-            </Link>
-            <Link 
-              href="/gdpr-cookie-consent"
-              className="w-full max-w-md px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-white/20 rounded-lg text-white font-sans text-base sm:text-lg transition-colors duration-300 text-center"
-            >
-              {t('legal.center.gdpr')}
-            </Link>
-            <Link 
-              href="/legal-compliance-handbook"
-              className="w-full max-w-md px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-white/20 rounded-lg text-white font-sans text-base sm:text-lg transition-colors duration-300 text-center"
-            >
-              {t('legal.center.handbook')}
-            </Link>
-            <Link 
-              href="/legal-governance-suite"
-              className="w-full max-w-md px-8 py-4 bg-slate-800/50 hover:bg-slate-700/50 border border-white/20 rounded-lg text-white font-sans text-base sm:text-lg transition-colors duration-300 text-center"
-            >
-              {t('legal.center.suite')}
-            </Link>
+          {/* Content area - vacía */}
+          <div className="mb-12">
+            {/* El contenido se agregará aquí */}
           </div>
         </div>
       </section>

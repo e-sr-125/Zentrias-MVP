@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function LegalGovernanceSuitePage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -44,18 +46,18 @@ export default function LegalGovernanceSuitePage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              COMPLETE LEGAL + GOVERNANCE SUITE
+              {t('legal.suite.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-sans mb-4">
-              Nov 15, 2025
+              {t('legal.suite.date')}
             </p>
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-8 font-sans">
-              INDEX
+              {t('legal.suite.index')}
             </h2>
           </div>
 

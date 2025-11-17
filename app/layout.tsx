@@ -41,13 +41,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`min-h-screen flex flex-col bg-gray-50 ${spaceGrotesk.variable} ${playfairDisplay.variable} ${inter.variable}`}>
+      <body className={`min-h-screen flex flex-col ${spaceGrotesk.variable} ${playfairDisplay.variable} ${inter.variable}`} style={{ backgroundColor: 'transparent' }}>
         <LanguageProviderWrapper>
           {/* NAVBAR */}
           <Navbar />
 
           {/* CONTENIDO PRINCIPAL */}
-          <main className="flex-grow pt-16">{children}</main>
+          <main className="flex-grow">{children}</main>
 
           {/* FLOATING CTA */}
           <FloatingCTA />

@@ -64,7 +64,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
   };
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden collaborator-body collaborator-tone" style={{ backgroundColor: '#36454F' }}>
+    <div className="min-h-screen text-white relative overflow-hidden collaborator-body collaborator-tone -mt-16 pt-16" style={{ backgroundColor: '#36454F' }}>
       {/* Fondo animado sutil */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Partículas suaves flotantes */}
@@ -90,7 +90,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
       </div>
 
       {/* Collaboration is the New Competition Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Left Section - Text Content */}
@@ -130,7 +130,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
       </section>
 
       {/* Why Collaborate with Zentrais Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Left Section - Text Content */}
@@ -177,7 +177,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
       </section>
 
       {/* Ways to Collaborate Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-white leading-tight collaborator-heading">

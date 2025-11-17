@@ -197,7 +197,7 @@ export default function InvestorsPage() {
   };
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden investors-tech investors-tone" style={{ backgroundColor: '#36454F' }}>
+    <div className="min-h-screen text-white relative overflow-hidden investors-tech investors-tone -mt-16 pt-16" style={{ backgroundColor: '#36454F' }}>
       {/* Fondo animado sutil */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Partículas suaves flotantes */}
@@ -223,7 +223,7 @@ export default function InvestorsPage() {
       </div>
 
       {/* Investing in Integrity Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-5xl mx-auto text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-white leading-tight collaborator-heading uppercase tracking-tight">
             {t('investors.integrity.title')}{' '}
@@ -235,7 +235,7 @@ export default function InvestorsPage() {
 
           {/* Video Placeholder */}
           <div className="mb-8 sm:mb-12">
-            <div className="w-full max-w-4xl mx-auto bg-slate-800/50 rounded-3xl border border-indigo-400/30 p-16 sm:p-20 md:p-24 flex items-center justify-center min-h-[300px] sm:min-h-[400px] md:min-h-[500px]">
+            <div className="w-full max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl xl:max-w-4xl 2xl:max-w-5xl mx-auto bg-slate-800/50 rounded-3xl border border-indigo-400/30 p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:p-28 flex items-center justify-center min-h-[250px] sm:min-h-[300px] md:min-h-[350px] lg:min-h-[400px] xl:min-h-[450px] 2xl:min-h-[500px]">
               <div className="text-center">
                 <div className="text-2xl sm:text-3xl md:text-4xl text-gray-400 collaborator-heading">
                   {t('investors.integrity.video')}
@@ -251,7 +251,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* Find Your Investor Type Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-white leading-tight collaborator-heading tracking-tight">
@@ -324,7 +324,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* The Attention Economy Is Collapsing Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Main Headline */}
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight text-center collaborator-heading tracking-tight">
@@ -383,7 +383,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* Trusted Voices Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-white leading-tight collaborator-heading tracking-tight">
@@ -460,7 +460,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* A Message From Our Founder Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight collaborator-heading tracking-tight">
             {t('investors.founder.title')}{' '}
@@ -473,12 +473,12 @@ export default function InvestorsPage() {
       </section>
 
       {/* Founder Message Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
             {/* Large Placeholder - Left */}
             <div className="lg:col-span-2">
-              <div className="w-full bg-slate-700/50 rounded-2xl border border-indigo-400/30 p-16 sm:p-20 md:p-24 flex items-center justify-center min-h-[400px] sm:min-h-[500px] md:min-h-[600px]">
+              <div className="w-full bg-slate-700/50 rounded-2xl border border-indigo-400/30 p-8 sm:p-12 md:p-16 lg:p-20 xl:p-24 2xl:p-28 flex items-center justify-center min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] 2xl:min-h-[550px]">
                 <div className="text-center text-gray-400 text-lg collaborator-body">
                   {t('investors.founder.content')}
                 </div>
@@ -525,7 +525,7 @@ export default function InvestorsPage() {
       </section>
 
       {/* The Team Behind the Transformation Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-white leading-tight collaborator-heading tracking-tight">
@@ -537,7 +537,7 @@ export default function InvestorsPage() {
           {/* Carousel Container */}
           <div className="relative">
             {/* Team Card */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 hover:border-pink-400/30 transition-all duration-300 hover:shadow-xl min-h-[400px] flex flex-col items-center justify-center overflow-hidden">
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-14 hover:border-pink-400/30 transition-all duration-300 hover:shadow-xl min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] 2xl:min-h-[550px] flex flex-col items-center justify-center overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div
                   key={currentMemberIndex}

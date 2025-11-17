@@ -101,7 +101,7 @@ export default function UserPage() {
   };
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden user-tone" style={{ backgroundColor: '#36454F' }}>
+    <div className="min-h-screen text-white relative overflow-hidden user-tone -mt-16 pt-16" style={{ backgroundColor: '#36454F' }}>
       {/* Partículas de luz de fondo */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {particles.map((particle) => (
@@ -125,7 +125,7 @@ export default function UserPage() {
       </div>
 
       {/* Sección principal - Hero con celulares */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-28 sm:pt-32 md:pt-36 lg:pt-40 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Texto a la izquierda */}
@@ -151,7 +151,7 @@ export default function UserPage() {
             </div>
 
             {/* Celulares a la derecha */}
-            <div className="relative h-[500px] sm:h-[600px] flex items-center justify-center">
+            <div className="relative h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px] 2xl:h-[650px] flex items-center justify-center">
               {/* Celular izquierdo - The Integrity Perspective */}
               <div
                 onClick={() => setSelectedPhone(0)}
@@ -175,21 +175,13 @@ export default function UserPage() {
                     : 'translateX(-50%) scale(0.8)',
                 }}
               >
-                <div className="relative w-64 sm:w-72 h-[32rem] sm:h-[36rem] border-4 border-blue-400/60 rounded-[2.5rem] bg-transparent p-2 sm:p-3 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-8 rounded-b-2xl border-b-2 border-blue-400/60" style={{ backgroundColor: '#151515' }}></div>
-                  <div className="w-full h-full rounded-[2rem] border-2 border-blue-400/40 bg-blue-500/20 backdrop-blur-sm flex flex-col items-center justify-center pt-6 pb-6">
-                    <Image
-                      src="/icon.png"
-                      alt="Zentrais Logo"
-                      width={40}
-                      height={40}
-                      className="opacity-40 mb-4"
-                    />
-                    <div className="text-blue-300/70 text-sm font-sans text-center px-4">
-                      {t('user.dashboard.idea')}
-                    </div>
-                  </div>
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-blue-400/40 rounded-full"></div>
+                <div className="relative w-72 sm:w-80 md:w-88 h-[36rem] sm:h-[40rem] md:h-[44rem] transition-all duration-300">
+                  <Image
+                    src="/Debate-Zentrais.png"
+                    alt="Debate Interface"
+                    fill
+                    className="object-contain rounded-2xl"
+                  />
                 </div>
               </div>
 
@@ -218,30 +210,13 @@ export default function UserPage() {
                     : 'translateX(-50%) scale(0.8)',
                 }}
               >
-                <div className="relative w-64 sm:w-72 h-[32rem] sm:h-[36rem] border-4 border-emerald-400/60 rounded-[2.5rem] bg-transparent p-2 sm:p-3 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-8 rounded-b-2xl border-b-2 border-emerald-400/60" style={{ backgroundColor: '#151515' }}></div>
-                  <div className="w-full h-full rounded-[2rem] border-2 border-emerald-400/40 bg-emerald-500/20 backdrop-blur-sm flex flex-col">
-                    <div className="pt-6 pb-4 flex justify-center">
-                      <Image
-                        src="/icon.png"
-                        alt="Zentrais Logo"
-                        width={40}
-                        height={40}
-                        className="opacity-40"
-                      />
-                    </div>
-                    <div className="flex-1"></div>
-                    {/* Barra de escritura estilo chat */}
-                    <div className="pb-4 px-4">
-                      <div className="bg-slate-800/50 rounded-full border border-emerald-400/30 px-4 py-2 flex items-center gap-2">
-                        <div className="flex-1 text-emerald-300/50 text-xs font-sans">{t('user.dashboard.type.message')}</div>
-                        <div className="w-6 h-6 rounded-full bg-emerald-400/30 flex items-center justify-center">
-                          <ArrowRight className="w-3 h-3 text-emerald-400" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-emerald-400/40 rounded-full"></div>
+                <div className="relative w-72 sm:w-80 md:w-88 h-[36rem] sm:h-[40rem] md:h-[44rem] transition-all duration-300">
+                  <Image
+                    src="/Chat-Zentrais.png"
+                    alt="Chat Interface"
+                    fill
+                    className="object-contain rounded-2xl"
+                  />
                 </div>
               </div>
 
@@ -268,52 +243,13 @@ export default function UserPage() {
                     : 'translateX(-50%) scale(0.8)',
                 }}
               >
-                <div className="relative w-64 sm:w-72 h-[32rem] sm:h-[36rem] border-4 border-orange-400/60 rounded-[2.5rem] bg-transparent p-2 sm:p-3 hover:border-orange-400 hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-8 rounded-b-2xl border-b-2 border-orange-400/60" style={{ backgroundColor: '#151515' }}></div>
-                  <div className="w-full h-full rounded-[2rem] border-2 border-orange-400/40 bg-orange-400/20 backdrop-blur-sm flex flex-col">
-                    <div className="pt-6 pb-4 flex justify-center">
-                      <Image
-                        src="/icon.png"
-                        alt="Zentrais Logo"
-                        width={40}
-                        height={40}
-                        className="opacity-40"
-                      />
-                    </div>
-                    {/* Conversaciones de venta */}
-                    <div className="flex-1 px-3 py-4 space-y-3 overflow-y-auto">
-                      <div className="flex flex-col items-end">
-                        <div className="bg-orange-500/30 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-200 text-xs font-sans font-semibold mb-2">{t('user.dashboard.marketplace.selling')}</div>
-                          <div className="relative w-full h-24 rounded-lg overflow-hidden mb-2">
-                            <Image
-                              src="/chair.jpg"
-                              alt="Chair for sale"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="text-orange-100/70 text-xs font-sans">{t('user.dashboard.marketplace.price')}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <div className="bg-slate-800/40 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-300/80 text-xs font-sans">{t('user.dashboard.marketplace.question1')}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-end">
-                        <div className="bg-orange-500/30 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-200 text-xs font-sans">{t('user.dashboard.marketplace.answer1')}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <div className="bg-slate-800/40 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-300/80 text-xs font-sans">{t('user.dashboard.marketplace.question2')}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-orange-400/40 rounded-full"></div>
+                <div className="relative w-72 sm:w-80 md:w-88 h-[36rem] sm:h-[40rem] md:h-[44rem] transition-all duration-300">
+                  <Image
+                    src="/Marketplace-Zentrais.png"
+                    alt="Marketplace Interface"
+                    fill
+                    className="object-contain rounded-2xl"
+                  />
                 </div>
               </div>
             </div>
@@ -322,7 +258,7 @@ export default function UserPage() {
       </section>
 
       {/* Experience Human-AI Symbiosis - Simple Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto text-left">
           <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-white leading-tight font-sans tracking-tight">
             {t('user.symbiosis.title')}{' '}<span className="tone-highlight">{t('user.symbiosis.human')}</span>{' '}{t('user.symbiosis.subtitle')}
@@ -334,7 +270,7 @@ export default function UserPage() {
       </section>
 
       {/* Step 1 Section - Two Columns */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Left Section - Text Content */}
@@ -373,7 +309,7 @@ export default function UserPage() {
 
             {/* Right Section - Image */}
             <div className="flex items-stretch justify-center lg:justify-end">
-              <div className="relative w-full max-w-md h-full min-h-[400px]">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] 2xl:min-h-[550px]">
                 <Image
                   src="/user-image-1.png"
                   alt="Step 1"
@@ -387,12 +323,12 @@ export default function UserPage() {
       </section>
 
       {/* Step 2 Section - Humanized Dialogue - Two Columns */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Left Section - Image */}
             <div className="flex items-stretch justify-center lg:justify-start order-2 lg:order-1">
-              <div className="relative w-full max-w-md h-full min-h-[400px]">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] 2xl:min-h-[550px]">
                 <Image
                   src="/user-image-2.png"
                   alt="Step 2"
@@ -437,7 +373,7 @@ export default function UserPage() {
       </section>
 
       {/* Step 3 Section - Snapshot: Your Integrity Profile - Two Columns */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Left Section - Text Content */}
@@ -473,7 +409,7 @@ export default function UserPage() {
 
             {/* Right Section - Image */}
             <div className="flex items-stretch justify-center lg:justify-end">
-              <div className="relative w-full max-w-md h-full min-h-[400px]">
+              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl 2xl:max-w-2xl h-full min-h-[300px] sm:min-h-[350px] md:min-h-[400px] lg:min-h-[450px] xl:min-h-[500px] 2xl:min-h-[550px]">
                 <Image
                   src="/user-image-3.png"
                   alt="Step 3"
@@ -487,7 +423,7 @@ export default function UserPage() {
       </section>
 
       {/* The Beta Dashboard Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white leading-tight font-sans tracking-tight">
             {t('user.dashboard.title')}
@@ -502,121 +438,51 @@ export default function UserPage() {
       </section>
 
       {/* The Beta Dashboard - Three Panels with Phones */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-8 sm:py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-6xl mx-auto">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-8 sm:pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20 lg:gap-24 max-w-6xl mx-auto">
           {/* The Integrity Perspective */}
           <div className="flex flex-col items-center hover:scale-105 transition-all duration-300">
             <div className="text-xl sm:text-2xl font-bold text-blue-300 mb-3 sm:mb-4 font-sans">{t('user.dashboard.integrity.debate')}</div>
-            <div className="relative">
-              <div className="relative w-64 sm:w-72 h-[32rem] sm:h-[36rem] border-4 border-blue-400/60 rounded-[2.5rem] bg-transparent p-2 sm:p-3 hover:border-blue-400 hover:shadow-xl hover:shadow-blue-500/30 transition-all duration-300">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-8 rounded-b-2xl border-b-2 border-blue-400/60" style={{ backgroundColor: '#151515' }}></div>
-                  <div className="w-full h-full rounded-[2rem] border-2 border-blue-400/40 bg-blue-500/20 backdrop-blur-sm flex flex-col items-center justify-center pt-6 pb-6">
-                    <Image
-                      src="/icon.png"
-                      alt="Zentrais Logo"
-                      width={40}
-                      height={40}
-                      className="opacity-40 mb-4"
-                    />
-                    <div className="text-blue-300/70 text-sm font-sans text-center px-4">
-                      {t('user.dashboard.idea')}
-                    </div>
-                  </div>
-                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-blue-400/40 rounded-full"></div>
-              </div>
+            <div className="relative w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[30rem] 2xl:w-[32rem] h-[36rem] sm:h-[40rem] md:h-[44rem] lg:h-[48rem] xl:h-[52rem] 2xl:h-[56rem]">
+              <Image
+                src="/Debate-Zentrais.png"
+                alt="Debate Interface"
+                fill
+                className="object-contain rounded-2xl"
+              />
             </div>
           </div>
 
           {/* Dialog */}
           <div className="flex flex-col items-center hover:scale-105 transition-all duration-300">
             <div className="text-xl sm:text-2xl font-bold text-emerald-300 mb-3 sm:mb-4 font-sans">{t('user.dashboard.chat')}</div>
-            <div className="relative">
-              <div className="relative w-64 sm:w-72 h-[32rem] sm:h-[36rem] border-4 border-emerald-400/60 rounded-[2.5rem] bg-transparent p-2 sm:p-3 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-500/30 transition-all duration-300">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-8 rounded-b-2xl border-b-2 border-emerald-400/60" style={{ backgroundColor: '#151515' }}></div>
-                <div className="w-full h-full rounded-[2rem] border-2 border-emerald-400/40 bg-emerald-500/20 backdrop-blur-sm flex flex-col">
-                  <div className="pt-6 pb-4 flex justify-center">
-                    <Image
-                      src="/icon.png"
-                      alt="Zentrais Logo"
-                      width={40}
-                      height={40}
-                      className="opacity-40"
-                    />
-                  </div>
-                  <div className="flex-1"></div>
-                  {/* Barra de escritura estilo chat */}
-                  <div className="pb-4 px-4">
-                    <div className="bg-slate-800/50 rounded-full border border-emerald-400/30 px-4 py-2 flex items-center gap-2">
-                      <div className="flex-1 text-emerald-300/50 text-xs font-sans">{t('user.dashboard.type.message')}</div>
-                      <div className="w-6 h-6 rounded-full bg-emerald-400/30 flex items-center justify-center">
-                        <ArrowRight className="w-3 h-3 text-emerald-400" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-emerald-400/40 rounded-full"></div>
-              </div>
+            <div className="relative w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[30rem] 2xl:w-[32rem] h-[36rem] sm:h-[40rem] md:h-[44rem] lg:h-[48rem] xl:h-[52rem] 2xl:h-[56rem]">
+              <Image
+                src="/Chat-Zentrais.png"
+                alt="Chat Interface"
+                fill
+                className="object-contain rounded-2xl"
+              />
             </div>
           </div>
 
           {/* The Integrity Exchange */}
           <div className="flex flex-col items-center hover:scale-105 transition-all duration-300">
             <div className="text-xl sm:text-2xl font-bold text-orange-300 mb-3 sm:mb-4 font-sans">{t('user.dashboard.integrity.marketplace')}</div>
-            <div className="relative">
-              <div className="relative w-64 sm:w-72 h-[32rem] sm:h-[36rem] border-4 border-orange-400/60 rounded-[2.5rem] bg-transparent p-2 sm:p-3 hover:border-orange-400 hover:shadow-xl hover:shadow-orange-500/30 transition-all duration-300">
-                <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-28 h-8 rounded-b-2xl border-b-2 border-orange-400/60" style={{ backgroundColor: '#151515' }}></div>
-                  <div className="w-full h-full rounded-[2rem] border-2 border-orange-400/40 bg-orange-400/20 backdrop-blur-sm flex flex-col">
-                    <div className="pt-6 pb-4 flex justify-center">
-                      <Image
-                        src="/icon.png"
-                        alt="Zentrais Logo"
-                        width={40}
-                        height={40}
-                        className="opacity-40"
-                      />
-                    </div>
-                    {/* Conversaciones de venta */}
-                    <div className="flex-1 px-3 py-4 space-y-3 overflow-y-auto">
-                      <div className="flex flex-col items-end">
-                        <div className="bg-orange-500/30 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-200 text-xs font-sans font-semibold mb-2">{t('user.dashboard.marketplace.selling')}</div>
-                          <div className="relative w-full h-24 rounded-lg overflow-hidden mb-2">
-                            <Image
-                              src="/chair.jpg"
-                              alt="Chair for sale"
-                              fill
-                              className="object-cover"
-                            />
-                          </div>
-                          <div className="text-orange-100/70 text-xs font-sans">{t('user.dashboard.marketplace.price')}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <div className="bg-slate-800/40 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-300/80 text-xs font-sans">{t('user.dashboard.marketplace.question1')}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-end">
-                        <div className="bg-orange-500/30 rounded-2xl rounded-tr-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-200 text-xs font-sans">{t('user.dashboard.marketplace.answer1')}</div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-start">
-                        <div className="bg-slate-800/40 rounded-2xl rounded-tl-sm px-3 py-2 max-w-[85%]">
-                          <div className="text-orange-300/80 text-xs font-sans">{t('user.dashboard.marketplace.question2')}</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                <div className="absolute bottom-3 left-1/2 transform -translate-x-1/2 w-16 h-1.5 bg-orange-400/40 rounded-full"></div>
-              </div>
+            <div className="relative w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[30rem] 2xl:w-[32rem] h-[36rem] sm:h-[40rem] md:h-[44rem] lg:h-[48rem] xl:h-[52rem] 2xl:h-[56rem]">
+              <Image
+                src="/Marketplace-Zentrais.png"
+                alt="Marketplace Interface"
+                fill
+                className="object-contain rounded-2xl"
+              />
             </div>
           </div>
         </div>
       </section>
 
       {/* Security & Trust Frames Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {/* Encrypted & Private */}

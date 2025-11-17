@@ -29,7 +29,7 @@ export default function Navbar() {
         WebkitBackdropFilter: 'blur(8px) saturate(180%)',
       } : undefined}
     >
-      <div className="flex justify-between items-center py-1 px-4 sm:px-6">
+      <div className="flex justify-between items-center py-0 px-4 sm:px-6 h-auto min-h-0">
         {isHomepage ? (
           <>
             <div className="flex-1"></div>
@@ -42,14 +42,14 @@ export default function Navbar() {
                 alt="Zentrais Logo"
                 width={56}
                 height={56}
-                className="transition-transform duration-300 hover:scale-110"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 transition-transform duration-300 hover:scale-110"
               />
               <Image
                 src="/logo-1.png"
                 alt="Zentrais"
                 width={130}
                 height={130}
-                className="transition-transform duration-300 hover:scale-110 object-contain"
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 transition-transform duration-300 hover:scale-110 object-contain"
               />
             </Link>
             <div className="flex-1 flex justify-end items-center gap-4">
@@ -67,14 +67,14 @@ export default function Navbar() {
                 alt="Zentrais Logo"
                 width={56}
                 height={56}
-                className="transition-transform duration-300 hover:scale-110"
+                className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 transition-transform duration-300 hover:scale-110"
               />
               <Image
                 src="/logo-1.png"
                 alt="Zentrais"
                 width={130}
                 height={130}
-                className="transition-transform duration-300 hover:scale-110 object-contain"
+                className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-32 lg:h-32 xl:w-36 xl:h-36 transition-transform duration-300 hover:scale-110 object-contain"
               />
             </Link>
             <div className="flex justify-end items-center gap-4">

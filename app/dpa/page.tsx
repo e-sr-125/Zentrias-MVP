@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function DPAPage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -44,47 +46,47 @@ export default function DPAPage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              ZENTRAIS DATA PROCESSING AGREEMENT (DPA)
+              {t('legal.dpa.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-sans">
-              Ver. 11/15/2025
+              {t('legal.dpa.version')}
             </p>
           </div>
 
           {/* Introduction */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              For GDPR, CPRA, LGPD, and global compliance
+              {t('legal.dpa.intro')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Effective Date: 11/15/2025
+              {t('legal.dpa.effective')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              This Data Processing Agreement (&quot;DPA&quot;) forms part of the Terms of Service between:
+              {t('legal.dpa.forms')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
-              <strong className="text-white">Controller:</strong> Zentrais users
+              <strong className="text-white">{t('legal.dpa.controller')}</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              <strong className="text-white">Processor:</strong> Zentrais, Inc.
+              <strong className="text-white">{t('legal.dpa.processor')}</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              When you use the platform, Zentrais processes personal data under the following terms:
+              {t('legal.dpa.when')}
             </p>
           </div>
 
           {/* Section 1 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              1. PURPOSE OF PROCESSING
+              {t('legal.dpa.section1.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais processes personal data to:
+              {t('legal.dpa.section1.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Deliver platform functionality</li>
@@ -94,17 +96,17 @@ export default function DPAPage() {
               <li>Ensure lawful and ethical use</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mt-4">
-              No processing occurs outside these purposes.
+              {t('legal.dpa.section1.no')}
             </p>
           </div>
 
           {/* Section 2 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              2. DATA COLLECTED
+              {t('legal.dpa.section2.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              As defined in the Privacy Policy:
+              {t('legal.dpa.section2.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Account data</li>
@@ -114,17 +116,17 @@ export default function DPAPage() {
               <li>Optional identity verification tokens</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mt-4">
-              No unnecessary or excessive data is collected.
+              {t('legal.dpa.section2.no')}
             </p>
           </div>
 
           {/* Section 3 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              3. SECURITY MEASURES
+              {t('legal.dpa.section3.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We implement:
+              {t('legal.dpa.section3.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Encryption at rest and transit</li>
@@ -134,17 +136,17 @@ export default function DPAPage() {
               <li>Data minimization practices</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mt-4">
-              Details are included in the Security Policy.
+              {t('legal.dpa.section3.details')}
             </p>
           </div>
 
           {/* Section 4 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              4. SUB-PROCESSORS
+              {t('legal.dpa.section4.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais may use sub-processors for:
+              {t('legal.dpa.section4.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Hosting</li>
@@ -190,30 +192,30 @@ export default function DPAPage() {
               <li>Objection</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mt-4 mb-2">
-              Requests:
+              {t('legal.dpa.section6.requests')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans">
-              privacy@zentrais.com
+              {t('legal.privacy.section8.email')}
             </p>
           </div>
 
           {/* Section 7 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              7. BREACH NOTIFICATION
+              {t('legal.dpa.section7.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Zentrais will notify affected users within 72 hours after discovering a data breach, as required by GDPR and global laws.
+              {t('legal.dpa.section7.desc')}
             </p>
           </div>
 
           {/* Section 8 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              8. TERMINATION
+              {t('legal.dpa.section8.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Upon termination:
+              {t('legal.dpa.section8.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>All personal data is deleted or anonymized, unless retention is legally required</li>
@@ -223,20 +225,20 @@ export default function DPAPage() {
           {/* Section 9 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              9. LIABILITY
+              {t('legal.dpa.section9.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Liability is shared based on the role (Controller vs Processor) under GDPR standards.
+              {t('legal.dpa.section9.desc')}
             </p>
           </div>
 
           {/* Final Note */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is built on <strong className="text-white">Truth. Trust. Transparency.</strong>
+              <strong className="text-white">{t('legal.dpa.final.title')}</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              This Data Processing Agreement reflects our commitment to protecting your data and complying with global privacy standards.
+              {t('legal.dpa.final.desc')}
             </p>
           </div>
         </div>

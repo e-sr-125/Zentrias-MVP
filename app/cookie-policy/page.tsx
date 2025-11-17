@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function CookiePolicyPage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -44,36 +46,36 @@ export default function CookiePolicyPage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              ZENTRAIS COOKIE POLICY
+              {t('legal.cookie.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-sans">
-              Ver. 11/15/2025
+              {t('legal.cookie.version')}
             </p>
           </div>
 
           {/* Introduction */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              Zentrais uses minimal cookies to operate the platform securely.
+              {t('legal.cookie.intro')}
             </p>
           </div>
 
           {/* Section 1 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              1. WHAT COOKIES WE USE
+              {t('legal.cookie.section1.title')}
             </h2>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              Essential Cookies
+              {t('legal.cookie.section1.essential.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Required for:
+              {t('legal.cookie.section1.essential.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Login</li>
@@ -82,14 +84,14 @@ export default function CookiePolicyPage() {
               <li>Session continuity</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 font-bold">
-              Cannot be disabled.
+              {t('legal.cookie.section1.essential.cannot')}
             </p>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              Functional Cookies
+              {t('legal.cookie.section1.functional.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Used for:
+              {t('legal.cookie.section1.functional.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Performance improvements</li>
@@ -98,10 +100,10 @@ export default function CookiePolicyPage() {
             </ul>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              Analytics Cookies (Optional)
+              {t('legal.cookie.section1.analytics.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Used only with consent:
+              {t('legal.cookie.section1.analytics.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Anonymous traffic measurement</li>
@@ -109,7 +111,7 @@ export default function CookiePolicyPage() {
             </ul>
 
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais does not use:
+              {t('legal.cookie.section1.no')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Advertising cookies</li>
@@ -121,20 +123,20 @@ export default function CookiePolicyPage() {
           {/* Section 2 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              2. THIRD-PARTY COOKIES
+              {t('legal.cookie.section2.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              If used, they follow strict agreements ensuring no data sale or profiling.
+              {t('legal.cookie.section2.desc')}
             </p>
           </div>
 
           {/* Section 3 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              3. HOW TO MANAGE COOKIES
+              {t('legal.cookie.section3.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You can:
+              {t('legal.cookie.section3.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Accept all</li>
@@ -142,23 +144,23 @@ export default function CookiePolicyPage() {
               <li>Customize settings</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              You can also manage cookies through browser settings.
+              {t('legal.cookie.section3.browser')}
             </p>
           </div>
 
           {/* Contact Section */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              4. CONTACT US
+              {t('legal.cookie.section4.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              For cookie policy questions or concerns:
+              {t('legal.cookie.section4.desc')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-2">
-              Zentrais Privacy Office
+              {t('legal.cookie.section4.office')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-2">
-              Email: privacy@zentrais.com
+              {t('legal.cookie.section4.email')}
             </p>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-sans">
               5185 NW 75th Ave,<br />
@@ -170,10 +172,10 @@ export default function CookiePolicyPage() {
           {/* Final Note */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is built on <strong className="text-white">Truth. Trust. Transparency.</strong>
+              <strong className="text-white">{t('legal.cookie.final.title')}</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Our cookie policy honors that commitment. We use only what is necessary to operate securely and protect your privacy.
+              {t('legal.cookie.final.desc')}
             </p>
           </div>
         </div>

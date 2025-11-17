@@ -38,7 +38,20 @@
   --sidebar-ring: oklch(0.708 0 0);
 }
 
+/* Media queries personalizadas para breakpoints responsive */
+@custom-media --xs (min-width: 360px);
+@custom-media --xl (min-width: 1366px);
+@custom-media --2xl (min-width: 1920px);
+
 @theme inline {
+  /* Breakpoints personalizados */
+  --breakpoint-xs: 360px;    /* Móvil pequeño */
+  --breakpoint-sm: 640px;    /* Móvil grande (Tailwind default) */
+  --breakpoint-md: 768px;    /* Tablet (Tailwind default) */
+  --breakpoint-lg: 1024px;   /* Portátil pequeño (Tailwind default) */
+  --breakpoint-xl: 1366px;  /* Portátil medio */
+  --breakpoint-2xl: 1920px; /* Escritorio grande */
+  
   --color-charcoal: #151515;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -91,10 +104,7 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-image: url('/fondo-new.jpg') !important;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: transparent;
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

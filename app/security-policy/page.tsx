@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function SecurityPolicyPage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -44,30 +46,29 @@ export default function SecurityPolicyPage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              ZENTRAIS SECURITY POLICY
+              {t('legal.security.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-sans">
-              Ver. 11/15/2025
+              {t('legal.security.version')}
             </p>
           </div>
 
           {/* Introduction */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              Zentrais is built on zero-compromise security.<br />
-              Below are the protections we enforce across all systems.
+              {t('legal.security.intro')}
             </p>
           </div>
 
           {/* Section 1 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              1. SECURITY PRINCIPLES
+              {t('legal.security.section1.title')}
             </h2>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Privacy-by-design</li>
@@ -82,7 +83,7 @@ export default function SecurityPolicyPage() {
           {/* Section 2 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              2. TECHNICAL CONTROLS
+              {t('legal.security.section2.title')}
             </h2>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>AES-256 encryption at rest</li>
@@ -99,7 +100,7 @@ export default function SecurityPolicyPage() {
           {/* Section 3 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              3. OPERATIONAL CONTROLS
+              {t('legal.security.section3.title')}
             </h2>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Background checks for key personnel</li>
@@ -113,10 +114,10 @@ export default function SecurityPolicyPage() {
           {/* Section 4 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              4. INCIDENT RESPONSE
+              {t('legal.security.section4.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We maintain a formal incident response plan including:
+              {t('legal.security.section4.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>24/7 monitoring</li>
@@ -129,7 +130,7 @@ export default function SecurityPolicyPage() {
           {/* Section 5 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              5. DATA BACKUP & RECOVERY
+              {t('legal.security.section5.title')}
             </h2>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Encrypted backups</li>
@@ -141,10 +142,10 @@ export default function SecurityPolicyPage() {
           {/* Section 6 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              6. COMPLIANCE
+              {t('legal.security.section6.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Aligned with:
+              {t('legal.security.section6.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>ISO 27001 principles</li>
@@ -178,10 +179,10 @@ export default function SecurityPolicyPage() {
           {/* Final Note */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is built on <strong className="text-white">Truth. Trust. Transparency.</strong>
+              <strong className="text-white">{t('legal.security.final.title')}</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Our security policy honors that commitment. We protect your data with zero-compromise security measures and continuous vigilance.
+              {t('legal.security.final.desc')}
             </p>
           </div>
         </div>

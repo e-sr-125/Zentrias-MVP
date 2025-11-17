@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function PrivacyPage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -18,7 +20,7 @@ export default function PrivacyPage() {
   }, []);
 
   return (
-    <div className="min-h-screen text-white relative overflow-hidden -mt-16 pt-16" style={{ backgroundColor: '#36454F' }}>
+    <div className="min-h-screen text-white relative overflow-hidden" style={{ backgroundColor: '#36454F', marginTop: '-64px', paddingTop: '64px' }}>
       {/* Fondo animado sutil */}
       <div className="fixed inset-0 pointer-events-none z-0">
         {/* Partículas suaves flotantes */}
@@ -44,35 +46,35 @@ export default function PrivacyPage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              ZENTRAIS PRIVACY POLICY
+              {t('legal.privacy.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-400 font-sans">
-              Ver. 11/15/2025
+              {t('legal.privacy.version')}
             </p>
           </div>
 
           {/* Introduction */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              Zentrais is built to protect people first. Your data is yours; your identity is yours, and your interactions belong to you. This Privacy Policy explains what we collect, how we use it, and how we safeguard every interaction across Dialog, Perspective, and Exchange. If you disagree with this policy, please stop using Zentrais.
+              {t('legal.privacy.intro')}
             </p>
           </div>
 
           {/* Section 1 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              1. WHO WE ARE
+              {t('legal.privacy.section1.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais, Inc. operates a human-AI ecosystem designed for authentic, transparent, and integrity-driven interactions.
+              {t('legal.privacy.section1.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We follow global privacy frameworks, including:
+              {t('legal.privacy.section1.frameworks')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4 space-y-2 ml-4">
               <li>GDPR (European Union)</li>
@@ -84,24 +86,24 @@ export default function PrivacyPage() {
               <li>Global Privacy Control (GPC) standards</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              We design for privacy-by-default, privacy-by-design, and data minimization.
+              {t('legal.privacy.section1.design')}
             </p>
           </div>
 
           {/* Section 2 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              2. WHAT WE COLLECT
+              {t('legal.privacy.section2.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              We collect only what is necessary to operate safely, prevent abuse, and improve the platform.
+              {t('legal.privacy.section2.desc')}
             </p>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              2.1 Information You Provide
+              {t('legal.privacy.section2.1.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Account details (if you create an account): name, username, email.
+              {t('legal.privacy.section2.1.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Profile information (optional).</li>
@@ -110,10 +112,10 @@ export default function PrivacyPage() {
             </ul>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              2.2 Automatic Data
+              {t('legal.privacy.section2.2.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Collected only for safety, security, and performance:
+              {t('legal.privacy.section2.2.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Device and browser data</li>
@@ -124,33 +126,33 @@ export default function PrivacyPage() {
             </ul>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              2.3 Sensitive Data
+              {t('legal.privacy.section2.3.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We do not request or store sensitive data unless you voluntarily provide it in content.
+              {t('legal.privacy.section2.3.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              If you do, we treat it with <strong className="text-white">maximum security and zero exploitation</strong>.
+              {t('legal.privacy.section2.3.security')}
             </p>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              2.4 Identity Verification Data (When Applicable)
+              {t('legal.privacy.section2.4.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              If we use third-party anonymous identity verification (e.g., Co3), you may choose to verify through them.
+              {t('legal.privacy.section2.4.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              We do not receive your government documents. We only receive a verified <strong className="text-white">yes/no token</strong>.
+              {t('legal.privacy.section2.4.token')}
             </p>
           </div>
 
           {/* Section 3 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              3. HOW WE USE YOUR INFORMATION
+              {t('legal.privacy.section3.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We use your data for the following lawful purposes:
+              {t('legal.privacy.section3.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>To operate core platform functions</li>
@@ -162,37 +164,37 @@ export default function PrivacyPage() {
               <li>To show your contributions inside the platform based on your chosen visibility settings</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
-              We do not sell your data.
+              {t('legal.privacy.section3.no.sell')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
-              We do not monetize your data.
+              {t('legal.privacy.section3.no.monetize')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
-              We do not use your data to manipulate behavior.
+              {t('legal.privacy.section3.no.manipulate')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans font-bold">
-              Ever.
+              {t('legal.privacy.section3.ever')}
             </p>
           </div>
 
           {/* Section 4 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              4. HOW WE SHARE INFORMATION
+              {t('legal.privacy.section4.title')}
             </h2>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              4.1 With Your Consent
+              {t('legal.privacy.section4.1.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              Information is shared for integrations, collaborations, or external services chosen by the user.
+              {t('legal.privacy.section4.1.desc')}
             </p>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              4.2 With Service Providers
+              {t('legal.privacy.section4.2.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Information is shared with service providers who are strictly bound by confidentiality and data protection contracts. Examples provided include:
+              {t('legal.privacy.section4.2.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Cloud hosting</li>
@@ -202,24 +204,24 @@ export default function PrivacyPage() {
             </ul>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              4.3 Legal Requirements
+              {t('legal.privacy.section4.3.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
-              Information may be shared if required by law, subpoena, or legal process, with notification to the user unless legally prohibited.
+              {t('legal.privacy.section4.3.desc')}
             </p>
 
             <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 font-sans">
-              4.4 Protection of Zentrais and Its Users
+              {t('legal.privacy.section4.4.title')}
             </h3>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Information is shared to detect, prevent, or respond to fraud, misuse, or threats to safety. It explicitly states that third parties are not allowed to use data for advertising or profiling.
+              {t('legal.privacy.section4.4.desc')}
             </p>
           </div>
 
           {/* Section 5 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              5. HOW WE PROTECT YOUR DATA
+              {t('legal.privacy.section5.title')}
             </h2>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>End-to-end encryption for data in motion.</li>
@@ -236,10 +238,10 @@ export default function PrivacyPage() {
           {/* Section 6 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              6. COOKIES & TRACKING TECHNOLOGY
+              {t('legal.privacy.section6.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais uses minimal, essential cookies for:
+              {t('legal.privacy.section6.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4 space-y-2 ml-4">
               <li>Login</li>
@@ -248,7 +250,7 @@ export default function PrivacyPage() {
               <li>Platform functionality</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We do not use:
+              {t('legal.privacy.section6.no')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4 space-y-2 ml-4">
               <li>Third-party advertising cookies</li>
@@ -256,33 +258,33 @@ export default function PrivacyPage() {
               <li>Cross-site profiling tools</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              You can adjust cookie settings at any time.
+              {t('legal.privacy.section6.manage')}
             </p>
           </div>
 
           {/* Section 7 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              7. DATA RETENTION
+              {t('legal.privacy.section7.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Data is kept only long enough to fulfill platform operations or legal requirements.
+              {t('legal.privacy.section7.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Users can request deletion at any time.
+              {t('legal.privacy.section7.delete')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans font-bold">
-              Once deleted, it cannot be restored.
+              {t('legal.privacy.section7.forever')}
             </p>
           </div>
 
           {/* Section 8 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              8. YOUR RIGHTS
+              {t('legal.privacy.section8.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Depending on your location, you may have the right to:
+              {t('legal.privacy.section8.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Access your data</li>
@@ -295,42 +297,42 @@ export default function PrivacyPage() {
               <li>File a complaint with your data protection authority</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We honor these rights worldwide—not just where legally required.
+              {t('legal.privacy.section8.worldwide')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
-              To exercise your rights:
+              {t('legal.privacy.section8.exercise')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans">
-              privacy@zentrais.com
+              {t('legal.privacy.section8.email')}
             </p>
           </div>
 
           {/* Section 9 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              9. CHILDREN&apos;S PRIVACY
+              {t('legal.privacy.section9.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is not intended for individuals under 16.
+              {t('legal.privacy.section9.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We do not knowingly collect data from minors.
+              {t('legal.privacy.section9.collect')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              If we learn a minor has used the platform, we delete the data immediately.
+              {t('legal.privacy.section9.delete')}
             </p>
           </div>
 
           {/* Section 10 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              10. INTERNATIONAL DATA TRANSFERS
+              {t('legal.privacy.section10.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We may store or process your data in the United States or other locations with equivalent protections.
+              {t('legal.privacy.section10.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We use:
+              {t('legal.privacy.section10.use')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Standard Contractual Clauses (SCCs)</li>
@@ -342,13 +344,13 @@ export default function PrivacyPage() {
           {/* Section 11 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              11. AI, PRIVACY & TRANSPARENCY
+              {t('legal.privacy.section11.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais uses AI to enhance user experience and ensure safety.
+              {t('legal.privacy.section11.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We do not:
+              {t('legal.privacy.section11.no')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Train external AI models with your data</li>
@@ -356,7 +358,7 @@ export default function PrivacyPage() {
               <li>Use your data to build commercial datasets</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We may use your data internally for:
+              {t('legal.privacy.section11.may')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Safety detection</li>
@@ -369,48 +371,52 @@ export default function PrivacyPage() {
           {/* Section 12 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              12. NO DATA SALE, EVER
+              {t('legal.privacy.section12.title')}
             </h2>
-            <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
-              <li>Zentrais does not sell your personal information.</li>
-              <li>We reject the surveillance economy.</li>
-              <li>Your trust is the currency of the Integrity Economy.</li>
-            </ul>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
+              {t('legal.privacy.section12.1')}
+            </p>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-2">
+              {t('legal.privacy.section12.2')}
+            </p>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
+              {t('legal.privacy.section12.3')}
+            </p>
           </div>
 
           {/* Section 13 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              13. THIRD-PARTY LINKS
+              {t('legal.privacy.section13.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              The platform may connect to third-party services, their privacy policies apply, and Zentrais is not responsible for their practices.
+              {t('legal.privacy.section13.desc')}
             </p>
           </div>
 
           {/* Section 14 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              14. CHANGES TO THIS POLICY
+              {t('legal.privacy.section14.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              The policy may be updated and material changes will result in direct notification and an updated effective date.
+              {t('legal.privacy.section14.desc')}
             </p>
           </div>
 
           {/* Section 15 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              15. CONTACT US
+              {t('legal.privacy.section15.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              For privacy questions, data requests, or concerns:
+              {t('legal.privacy.section15.desc')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-2">
-              Zentrais Privacy Office
+              {t('legal.privacy.section15.office')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-2">
-              Email: privacy@zentrais.com
+              {t('legal.privacy.section15.email')}
             </p>
             <p className="text-base sm:text-lg text-gray-400 leading-relaxed font-sans">
               5185 NW 75th Ave,<br />
@@ -422,10 +428,10 @@ export default function PrivacyPage() {
           {/* Final Note */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is built on <strong className="text-white">Truth. Trust. Transparency.</strong>
+              <strong className="text-white">{t('legal.privacy.final.title')}</strong>
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Our privacy policy honors that commitment. You own your data. You control your identity. We protect what you share—and what you don&apos;t.
+              {t('legal.privacy.final.desc')}
             </p>
           </div>
         </div>

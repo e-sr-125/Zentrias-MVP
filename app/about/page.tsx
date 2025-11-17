@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
 
-export default function GDPRCookieConsentPage() {
+export default function AboutPage() {
   const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
@@ -51,20 +51,75 @@ export default function GDPRCookieConsentPage() {
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              {t('legal.gdpr.title')}
+              {t('about.title')}
             </h1>
-            <p className="text-base sm:text-lg text-gray-400 font-sans mb-12">
-              {t('legal.gdpr.date')}
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-white font-sans mx-auto">
+              {t('about.subtitle')}
+            </h2>
+          </div>
+
+          {/* Introduction */}
+          <div className="mb-12">
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
+              {t('about.intro')}
             </p>
           </div>
 
-          {/* Content Section */}
+          {/* Platform Modes */}
+          <div className="mb-12">
+            <div className="space-y-4">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-sans">
+                  {t('about.chat.title')}
+                </h3>
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
+                  {t('about.chat.desc')}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-sans">
+                  {t('about.debate.title')}
+                </h3>
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
+                  {t('about.debate.desc')}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-sans">
+                  {t('about.shopping.title')}
+                </h3>
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
+                  {t('about.shopping.desc')}
+                </p>
+              </div>
+
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 font-sans">
+                  {t('about.business.title')}
+                </h3>
+                <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
+                  {t('about.business.desc')}
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Conclusion */}
+          <div className="mb-12">
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6">
+              {t('about.conclusion')}
+            </p>
+          </div>
+
+          {/* Mission */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              {t('legal.gdpr.content.title')}
+              {t('about.mission.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              {t('legal.gdpr.content.effective')}
+              {t('about.mission.desc')}
             </p>
           </div>
         </div>

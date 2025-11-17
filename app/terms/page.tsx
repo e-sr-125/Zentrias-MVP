@@ -2,8 +2,10 @@
 
 import { useState, useEffect } from 'react';
 import Footer from '../../components/footer';
+import { useLanguage } from '../../contexts/language-context';
 
 export default function TermsPage() {
+  const { t } = useLanguage();
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
 
   // Generar partículas suaves
@@ -44,72 +46,72 @@ export default function TermsPage() {
       </div>
 
       {/* Content Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-0 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-6xl mx-auto">
           {/* Header */}
           <div className="mb-12 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-white font-sans mx-auto">
-              ZENTRAIS TERMS OF SERVICE (TOS)
+              {t('legal.terms.title')}
             </h1>
             <p className="text-base sm:text-lg text-gray-300 font-sans">
-              Effective Date: 11/15/2025
+              {t('legal.terms.effective')}
             </p>
           </div>
 
           {/* Welcome to Zentrais */}
           <div className="mb-12">
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Welcome to Zentrais.
+              {t('legal.terms.welcome')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              The following Terms of Service (&quot;Terms&quot;) govern your access to and use of the Zentrais platform, including Dialog, Perspective, and Exchange.
+              {t('legal.terms.intro')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              By using Zentrais, you agree to these Terms. If you do not agree, stop using the platform.
+              {t('legal.terms.agree')}
             </p>
           </div>
 
           {/* Section 1 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              1. ABOUT ZENTRAIS
+              {t('legal.terms.section1.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Zentrais is a human-AI ecosystem built on three values: Truth, Trust, and Transparency.
+              {t('legal.terms.section1.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mt-4">
-              We aim to create an authentic environment where users engage responsibly and ethically.
+              {t('legal.terms.section1.aim')}
             </p>
           </div>
 
           {/* Section 2 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              2. ELIGIBILITY
+              {t('legal.terms.section2.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              To use Zentrais, you must:
+              {t('legal.terms.section2.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
-              <li>Be at least 16 years old</li>
+              <li>Be at least 18 years old</li>
               <li>Have legal capacity to enter into agreements</li>
               <li>Agree to comply with all applicable laws</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              If you use Zentrais on behalf of an organization, you confirm you have the authority to do so.
+              {t('legal.terms.section2.org')}
             </p>
           </div>
 
           {/* Section 3 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              3. ACCOUNT CREATION
+              {t('legal.terms.section3.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You may use Zentrais with or without an account.
+              {t('legal.terms.section3.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              If you create an account:
+              {t('legal.terms.section3.if')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>You must provide accurate information</li>
@@ -121,16 +123,16 @@ export default function TermsPage() {
           {/* Section 4 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              4. USER RESPONSIBILITIES
+              {t('legal.terms.section4.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Unauthorized use must be reported immediately:
+              {t('legal.terms.section4.report')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-6">
-              security@zentrais.com
+              {t('legal.terms.section4.email')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You agree not to:
+              {t('legal.terms.section4.agree')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Violate any law</li>
@@ -141,20 +143,20 @@ export default function TermsPage() {
               <li>Interfere with platform integrity</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              All interactions must honor the Integrity Economy.
+              {t('legal.terms.section4.honor')}
             </p>
           </div>
 
           {/* Section 5 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              5. USER CONTENT
+              {t('legal.terms.section5.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You retain ownership of your content.
+              {t('legal.terms.section5.own')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              By posting content on Zentrais, you grant us a non-exclusive, global, revocable license to:
+              {t('legal.terms.section5.grant')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Display content within the platform</li>
@@ -162,23 +164,23 @@ export default function TermsPage() {
               <li>Use anonymized content for performance improvement</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We do not use your personal content for external AI training or commercial datasets.
+              {t('legal.terms.section5.no')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              We may remove content violating these Terms.
+              {t('legal.terms.section5.remove')}
             </p>
           </div>
 
           {/* Section 6 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              6. AI & AUTOMATION
+              {t('legal.terms.section6.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais uses AI to enable conversation, moderation, and safety systems.
+              {t('legal.terms.section6.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You understand that:
+              {t('legal.terms.section6.understand')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>AI may generate, recommend, or respond to content</li>
@@ -186,17 +188,17 @@ export default function TermsPage() {
               <li>You are responsible for your actions based on the AI output</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              We do not provide legal, medical, or financial advice through AI systems.
+              {t('legal.terms.section6.no.advice')}
             </p>
           </div>
 
           {/* Section 7 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              7. PROHIBITED USES
+              {t('legal.terms.section7.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You may not use Zentrais to:
+              {t('legal.terms.section7.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Exploit security vulnerabilities</li>
@@ -207,17 +209,17 @@ export default function TermsPage() {
               <li>Launder identity or manipulate Integrity Scores</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Violations can result in suspension or termination.
+              {t('legal.terms.section7.violations')}
             </p>
           </div>
 
           {/* Section 8 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              8. TERMINATION
+              {t('legal.terms.section8.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We may suspend or terminate access if:
+              {t('legal.terms.section8.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>You violate these Terms</li>
@@ -226,20 +228,20 @@ export default function TermsPage() {
               <li>You create legal or safety risk</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              You may terminate at any time by deleting your account.
+              {t('legal.terms.section8.you')}
             </p>
           </div>
 
           {/* Section 9 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              9. DISCLAIMERS
+              {t('legal.terms.section9.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              Zentrais is provided &quot;as is&quot; without warranties of any kind.
+              {t('legal.terms.section9.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We do not guarantee:
+              {t('legal.terms.section9.guarantee')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
               <li>Uninterrupted access</li>
@@ -247,34 +249,36 @@ export default function TermsPage() {
               <li>Accuracy of AI-generated content</li>
             </ul>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              You use the platform at your own discretion.
+              {t('legal.terms.section9.discretion')}
             </p>
           </div>
 
           {/* Section 10 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              10. LIMITATION OF LIABILITY
+              {t('legal.terms.section10.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              To the fullest extent allowed by law:
+              {t('legal.terms.section10.desc')}
             </p>
-            <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-6 space-y-2 ml-4">
-              <li>Zentrais is not liable for damages, losses, or misuse arising from your use of the platform</li>
-              <li>Liability is limited to the amount paid to Zentrais (if any) in the last 12 months</li>
-            </ul>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
+              Zentrais is not liable for damages, losses, or misuse arising from your use of the platform.
+            </p>
+            <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
+              Liability is limited to the amount paid to Zentrais (if any) in the last 12 months.
+            </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Some jurisdictions may have additional rights; we honor them.
+              {t('legal.terms.section10.jurisdictions')}
             </p>
           </div>
 
           {/* Section 11 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              11. INDEMNIFICATION
+              {t('legal.terms.section11.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              You agree to indemnify Zentrais against claims arising from:
+              {t('legal.terms.section11.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Your violation of these Terms</li>
@@ -286,26 +290,26 @@ export default function TermsPage() {
           {/* Section 12 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              12. CHANGES TO TERMS
+              {t('legal.terms.section12.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              We may update these Terms at any time.
+              {t('legal.terms.section12.desc')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              If materially changed, we will notify you.
+              {t('legal.terms.section12.notify')}
             </p>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans">
-              Continued use means acceptance.
+              {t('legal.terms.section12.continued')}
             </p>
           </div>
 
           {/* Section 13 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              13. GOVERNING LAW
+              {t('legal.terms.section13.title')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed font-sans mb-4">
-              This Agreement is governed by:
+              {t('legal.terms.section13.desc')}
             </p>
             <ul className="list-disc list-inside text-base sm:text-lg text-gray-300 leading-relaxed font-sans space-y-2 ml-4">
               <li>Delaware law</li>
@@ -316,13 +320,13 @@ export default function TermsPage() {
           {/* Section 14 */}
           <div className="mb-12">
             <h2 className="text-2xl sm:text-3xl font-bold text-white mb-4 font-sans">
-              14. CONTACT
+              {t('legal.terms.section14.title')}
             </h2>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans mb-2">
-              Zentrais Legal Office
+              {t('legal.terms.section14.office')}
             </p>
             <p className="text-base sm:text-lg text-white leading-relaxed font-sans">
-              legal@zentrais.com
+              {t('legal.terms.section14.email')}
             </p>
           </div>
         </div>
