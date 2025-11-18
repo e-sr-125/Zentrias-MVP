@@ -442,7 +442,7 @@ export default function UserPage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 md:gap-20 lg:gap-24 max-w-6xl mx-auto">
           {/* The Integrity Perspective */}
           <div className="flex flex-col items-center hover:scale-105 transition-all duration-300">
-            <div className="text-xl sm:text-2xl font-bold text-blue-300 mb-3 sm:mb-4 font-sans">{t('user.dashboard.integrity.debate')}</div>
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-blue-300 mb-3 sm:mb-4 font-sans text-center w-full px-2 break-words">{t('user.dashboard.integrity.debate')}</div>
             <div className="relative w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[30rem] 2xl:w-[32rem] h-[36rem] sm:h-[40rem] md:h-[44rem] lg:h-[48rem] xl:h-[52rem] 2xl:h-[56rem]">
               <Image
                 src="/Debate-Zentrais.png"
@@ -455,7 +455,7 @@ export default function UserPage() {
 
           {/* Dialog */}
           <div className="flex flex-col items-center hover:scale-105 transition-all duration-300">
-            <div className="text-xl sm:text-2xl font-bold text-emerald-300 mb-3 sm:mb-4 font-sans">{t('user.dashboard.chat')}</div>
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-emerald-300 mb-3 sm:mb-4 font-sans text-center w-full px-2 break-words">{t('user.dashboard.chat')}</div>
             <div className="relative w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[30rem] 2xl:w-[32rem] h-[36rem] sm:h-[40rem] md:h-[44rem] lg:h-[48rem] xl:h-[52rem] 2xl:h-[56rem]">
               <Image
                 src="/Chat-Zentrais.png"
@@ -468,7 +468,7 @@ export default function UserPage() {
 
           {/* The Integrity Exchange */}
           <div className="flex flex-col items-center hover:scale-105 transition-all duration-300">
-            <div className="text-xl sm:text-2xl font-bold text-orange-300 mb-3 sm:mb-4 font-sans">{t('user.dashboard.integrity.marketplace')}</div>
+            <div className="text-base sm:text-lg md:text-xl lg:text-2xl font-bold text-orange-300 mb-3 sm:mb-4 font-sans text-center w-full px-2 break-words">{t('user.dashboard.integrity.marketplace')}</div>
             <div className="relative w-72 sm:w-80 md:w-96 lg:w-[28rem] xl:w-[30rem] 2xl:w-[32rem] h-[36rem] sm:h-[40rem] md:h-[44rem] lg:h-[48rem] xl:h-[52rem] 2xl:h-[56rem]">
               <Image
                 src="/Marketplace-Zentrais.png"

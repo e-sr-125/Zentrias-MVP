@@ -90,7 +90,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
       </div>
 
       {/* Collaboration is the New Competition Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Left Section - Text Content */}
@@ -111,7 +111,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
             </div>
 
             {/* Right Section - Image */}
-            <div className="flex items-center justify-center lg:justify-end h-full">
+            <div className="flex items-center justify-center lg:justify-end self-stretch">
               <div className="relative w-full max-w-2xl h-full">
                 <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
                   <Image
@@ -191,7 +191,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {/* Research Alliances Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading">Research Alliances</h3>
+              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center">Research Alliances</h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                 Partner with our research team to co-create reports, uncover emerging ethical business trends, and access data-backed insights for strategic planning.
               </p>
@@ -205,7 +205,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
 
             {/* Exchange Integration Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading">{t('collaborator.ways.marketplace.title')}</h3>
+              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center">{t('collaborator.ways.marketplace.title')}</h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                 Integrate Zentrals&apos; verified trust tools into your products, enhancing credibility with consumers through certifications, supply chain tracking, and integrity badges.
               </p>
@@ -219,7 +219,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
 
             {/* Co-Brand Campaigns Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105">
-              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading">Co-Brand Campaigns</h3>
+              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center">Co-Brand Campaigns</h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6">
                 Launch campaigns highlighting ethical leadership and measurable outcomes. Co-create content, while tracking engagement and audience growth.
               </p>

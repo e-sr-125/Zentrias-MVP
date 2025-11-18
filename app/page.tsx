@@ -49,10 +49,7 @@ export default function HomePage() {
       style={{ backgroundImage: `url('/fondo-new.jpg')` }}
     >
       {/* CABECERA DE LA PANTALLA */}
-      <div className="container mx-auto px-4 sm:px-6 pt-24 sm:pt-28 md:pt-32 lg:pt-36 text-left">
-        <h2 className="text-base sm:text-lg font-semibold mb-2 text-white/90 tracking-wide drop-shadow-lg font-sans">
-          {t('home.greeting')}
-        </h2>
+      <div className="container mx-auto px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 lg:pt-44 text-left">
         <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-6 sm:mb-10 text-white tracking-wider drop-shadow-2xl font-sans">
           {t('home.title')}
         </h1>
