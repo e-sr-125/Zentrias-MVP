@@ -278,7 +278,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-white text-center collaborator-heading">
-            {t('media.storylines.title')}{' '}
+            {t('media.storylines.title')}<br />
             <span className="text-blue-300">{t('media.storylines.integrity')}</span>
           </h2>
 
@@ -403,7 +403,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                   </p>
                   <a 
                     href="mailto:pr@zentrais.com" 
-                    className="tone-highlight hover:opacity-80 text-base sm:text-lg transition-colors"
+                    className="text-cyan-400 hover:text-cyan-300 text-base sm:text-lg transition-colors"
                   >
                     {t('media.contacts.davidson.email')}
                   </a>

@@ -271,7 +271,15 @@ export default function UserPage() {
               
               {/* Main Title */}
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 font-sans tracking-tight">
-                {t('user.step1.title')}
+                {t('user.step1.title.part1')}
+                <br />
+                {t('user.step1.title.part2')}
+                {t('user.step1.title.part3') && (
+                  <>
+                    <br />
+                    {t('user.step1.title.part3')}
+                  </>
+                )}
               </h2>
               
               {/* Descriptive Text */}
@@ -336,7 +344,9 @@ export default function UserPage() {
 
               {/* Main Title */}
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white leading-tight font-sans tracking-tight">
-                {t('user.step2.title')}
+                {t('user.step2.title.part1')}
+                <br />
+                {t('user.step2.title.part2')} {t('user.step2.title.part3')}
               </h2>
 
               {/* Descriptive Paragraph */}
@@ -521,7 +531,11 @@ export default function UserPage() {
         <div className="max-w-2xl mx-auto">
           <div className="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-blue-400/30 p-8 sm:p-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-white leading-tight font-sans tracking-tight">
-              {t('user.waitlist.title')}
+              {t('user.waitlist.title.part1')}
+              <br />
+              {t('user.waitlist.title.part2')}
+              <br />
+              {t('user.waitlist.title.part3')}
             </h2>
             <p className="text-base sm:text-lg text-gray-300 text-center mb-8 leading-relaxed font-sans">
               {t('user.waitlist.desc')}
