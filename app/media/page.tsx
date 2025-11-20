@@ -99,18 +99,18 @@ Publication History / Focus Area: ${formData.publicationHistory}
             {/* Left Section - Text Content */}
             <div className="text-left">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white leading-tight collaborator-heading">
-                Let&apos;s Break{' '}
-                <span className="text-blue-300">the Mold.</span>{' '}
-                Together.
+                {t('media.break.title')}{' '}
+                <span className="text-blue-300">{t('media.break.mold')}</span>{' '}
+                {t('media.break.together')}
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Join a global network of creators and journalists reshaping how stories are told, powered by Zentrais&apos; Perspective Engine for respectful, truth-driven dialogue.
+                {t('media.break.desc')}
               </p>
               <Button
                 onClick={handleJoinZenzers}
                 className="tone-button text-white text-lg px-8 py-6 rounded-xl font-bold transition-all duration-500 hover:scale-105"
               >
-                Join Zenzers
+                {t('media.break.cta')}
               </Button>
             </div>
 
@@ -149,45 +149,45 @@ Publication History / Focus Area: ${formData.publicationHistory}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {/* Before Box */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-red-400/30 p-6 sm:p-8">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading">Before</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading">{t('media.debate.before')}</h3>
               <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-red-500 mt-2 flex-shrink-0"></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    Polarized, emotional argument
+                    {t('media.debate.before.bullet1')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-red-500 mt-2 flex-shrink-0"></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    Dimmer, chaotic visuals, overlapping comments, angry emojis, red tones
+                    {t('media.debate.before.bullet2')}
                   </span>
                 </li>
               </ul>
               <p className="text-center text-red-400 font-semibold text-base sm:text-lg ">
-                The old internet rewarded outrage.
+                {t('media.debate.before.conclusion')}
               </p>
             </div>
 
             {/* After Box */}
             <div className="bg-slate-800/50 backdrop-blur-sm rounded-2xl border border-blue-400/30 p-6 sm:p-8">
-              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading">After</h3>
+              <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading">{t('media.debate.after')}</h3>
               <ul className="space-y-4 mb-6">
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    Respectful, solution-focused discussion
+                    {t('media.debate.after.bullet1')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full bg-blue-500 mt-2 flex-shrink-0"></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    Clean, balanced visuals calm discussion bubbles, mutual understanding, cool color tones
+                    {t('media.debate.after.bullet2')}
                   </span>
                 </li>
               </ul>
               <p className="text-center text-blue-400 font-semibold text-base sm:text-lg ">
-                The new web rewards integrity.
+                {t('media.debate.after.conclusion')}
               </p>
             </div>
           </div>
@@ -198,14 +198,14 @@ Publication History / Focus Area: ${formData.publicationHistory}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white leading-tight collaborator-heading">
-            Resources for{' '}
-            <span className="text-blue-300">Ethical</span>
+            {t('media.resources.ethical.title')}{' '}
+            <span className="text-blue-300">{t('media.resources.ethical.subtitle')}</span>
             <br />
-            Storytelling
+            {t('media.resources.ethical.title2')}
           </h2>
           <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
-            Access verified stories, visuals, and press materials built to empower<br className="hidden sm:block" />
-            transparent journalism and conscious creation.
+            {t('media.resources.ethical.desc')}<br className="hidden sm:block" />
+            {t('media.resources.ethical.desc2')}
           </p>
         </div>
       </section>
@@ -217,57 +217,57 @@ Publication History / Focus Area: ${formData.publicationHistory}
             {/* Press Kit Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
               <div className="flex flex-col items-center mb-6 flex-shrink-0">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading text-center min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center">Press Kit</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading text-center min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center">{t('media.resources.presskit.title')}</h3>
                 <div className="w-24 h-24 sm:w-28 sm:h-28 bg-amber-50/90 rounded-xl flex items-center justify-center">
                   <Folder className="w-12 h-12 sm:w-14 sm:h-14 text-amber-800" />
                 </div>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow min-h-0">
-                Everything you need to cover Zentrals with accuracy and confidence, official logos, bios, brand assets, and our founding story.
+                {t('media.resources.presskit.desc')}
               </p>
               <Button
                 onClick={() => window.location.href = 'mailto:pr@zentrais.com?subject=Press Kit Request'}
                 className="tone-button w-full text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0 mt-auto"
               >
-                Download Kit
+                {t('media.resources.presskit.cta')}
               </Button>
             </div>
 
             {/* Press Release Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
               <div className="flex flex-col items-center mb-6 flex-shrink-0">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading text-center min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center">Press Release</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading text-center min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center">{t('media.resources.pressrelease.title')}</h3>
                 <div className="w-24 h-24 sm:w-28 sm:h-28 bg-amber-50/90 rounded-xl flex items-center justify-center">
                   <Megaphone className="w-12 h-12 sm:w-14 sm:h-14 text-red-600" />
                 </div>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow min-h-0">
-                Stay informed with the latest announcements, and research shaping the Integrity Economy direct from the source.
+                {t('media.resources.pressrelease.desc')}
               </p>
               <Button
                 onClick={() => window.location.href = 'mailto:pr@zentrais.com?subject=Press Release Updates'}
                 className="tone-button w-full text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0 mt-auto"
               >
-                View Updates
+                {t('media.resources.pressrelease.cta')}
               </Button>
             </div>
 
             {/* Story Briefs Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
               <div className="flex flex-col items-center mb-6 flex-shrink-0">
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading text-center min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center">Story Briefs</h3>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 collaborator-heading text-center min-h-[3.5rem] sm:min-h-[4rem] flex items-center justify-center">{t('media.resources.storybriefs.title')}</h3>
                 <div className="w-24 h-24 sm:w-28 sm:h-28 bg-amber-50/90 rounded-xl flex items-center justify-center">
                   <BookOpen className="w-12 h-12 sm:w-14 sm:h-14 text-amber-900" />
                 </div>
               </div>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow min-h-0">
-                Explore ready-to-publish insights showing how the Perspective Engine transforms digital conversation into meaningful exchange.
+                {t('media.resources.storybriefs.desc')}
               </p>
               <Button
                 onClick={() => window.location.href = 'mailto:pr@zentrais.com?subject=Story Briefs Request'}
                 className="tone-button w-full text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0 mt-auto"
               >
-                Read Briefs
+                {t('media.resources.storybriefs.cta')}
               </Button>
             </div>
           </div>
@@ -278,8 +278,8 @@ Publication History / Focus Area: ${formData.publicationHistory}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-12 text-white text-center collaborator-heading">
-            Explore Storylines Shaping the{' '}
-            <span className="text-blue-300">Integrity Economy</span>
+            {t('media.storylines.title')}{' '}
+            <span className="text-blue-300">{t('media.storylines.integrity')}</span>
           </h2>
 
           <div className="space-y-4">
@@ -290,8 +290,8 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 className="w-full px-6 py-5 flex items-center justify-between hover:bg-blue-50/50 transition-all duration-300 group"
               >
                 <div className="text-left flex-1">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Rebuilding Trust</h3>
-                  <p className="text-sm sm:text-base text-gray-600">How Zentrais uses AI to verify human truth at scale.</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">{t('media.storylines.trust.title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-600">{t('media.storylines.trust.desc')}</p>
                 </div>
                 {expandedStoryline === 'rebuilding-trust' ? (
                   <ChevronUp className="w-5 h-5 text-blue-500 flex-shrink-0 ml-4 transition-transform" />
@@ -302,7 +302,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {expandedStoryline === 'rebuilding-trust' && (
                 <div className="px-6 py-4 border-t border-blue-100 bg-blue-50/30">
                   <p className="text-gray-700 leading-relaxed">
-                    Zentrais leverages advanced AI verification systems to authenticate human contributions, creating a trust layer that scales across millions of interactions. Our technology ensures that every piece of content, every perspective, and every transaction is verified for authenticity before it enters the Integrity Economy.
+                    {t('media.storylines.trust.content')}
                   </p>
                 </div>
               )}
@@ -315,8 +315,8 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 className="w-full px-6 py-5 flex items-center justify-between hover:bg-blue-50/50 transition-all duration-300 group"
               >
                 <div className="text-left flex-1">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">The End of the Attention Economy</h3>
-                  <p className="text-sm sm:text-base text-gray-600">Why engagement metrics are being replaced by integrity metrics.</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">{t('media.storylines.attention.title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-600">{t('media.storylines.attention.desc')}</p>
                 </div>
                 {expandedStoryline === 'attention-economy' ? (
                   <ChevronUp className="w-5 h-5 text-blue-500 flex-shrink-0 ml-4 transition-transform" />
@@ -327,7 +327,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {expandedStoryline === 'attention-economy' && (
                 <div className="px-6 py-4 border-t border-blue-100 bg-blue-50/30">
                   <p className="text-gray-700 leading-relaxed">
-                    Traditional platforms reward clicks, views, and engagement regardless of truth. Zentrais introduces Integrity Tokens that measure verified contributions, ethical behavior, and authentic interactions. This shift from attention to integrity represents a fundamental change in how digital value is created and rewarded.
+                    {t('media.storylines.attention.content')}
                   </p>
                 </div>
               )}
@@ -340,8 +340,8 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 className="w-full px-6 py-5 flex items-center justify-between hover:bg-blue-50/50 transition-all duration-300 group"
               >
                 <div className="text-left flex-1">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">Ethical AI Collaboration</h3>
-                  <p className="text-sm sm:text-base text-gray-600">The framework ensuring human values remain at the core of technology.</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">{t('media.storylines.ethical.title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-600">{t('media.storylines.ethical.desc')}</p>
                 </div>
                 {expandedStoryline === 'ethical-ai' ? (
                   <ChevronUp className="w-5 h-5 text-blue-500 flex-shrink-0 ml-4 transition-transform" />
@@ -352,7 +352,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {expandedStoryline === 'ethical-ai' && (
                 <div className="px-6 py-4 border-t border-blue-100 bg-blue-50/30">
                   <p className="text-gray-700 leading-relaxed">
-                    Our three-engine ecosystem (Perspective, Dialog, Exchange) is designed with human values at its foundation. Every AI interaction is guided by ethical principles, verified data, and human oversight. This framework ensures technology serves humanity, not the other way around.
+                    {t('media.storylines.ethical.content')}
                   </p>
                 </div>
               )}
@@ -365,8 +365,8 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 className="w-full px-6 py-5 flex items-center justify-between hover:bg-blue-50/50 transition-all duration-300 group"
               >
                 <div className="text-left flex-1">
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">The New Creator Economy</h3>
-                  <p className="text-sm sm:text-base text-gray-600">How truth and transparency drive sustainable influence.</p>
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-1 group-hover:text-blue-700 transition-colors">{t('media.storylines.creator.title')}</h3>
+                  <p className="text-sm sm:text-base text-gray-600">{t('media.storylines.creator.desc')}</p>
                 </div>
                 {expandedStoryline === 'creator-economy' ? (
                   <ChevronUp className="w-5 h-5 text-blue-500 flex-shrink-0 ml-4 transition-transform" />
@@ -377,7 +377,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {expandedStoryline === 'creator-economy' && (
                 <div className="px-6 py-4 border-t border-blue-100 bg-blue-50/30">
                   <p className="text-gray-700 leading-relaxed">
-                    Creators in the Integrity Economy earn through verified contributions, not viral moments. Integrity Tokens reward authentic engagement, meaningful content, and ethical practices. This creates a sustainable model where influence is built on trust, not manipulation.
+                    {t('media.storylines.creator.content')}
                   </p>
                 </div>
               )}
@@ -391,7 +391,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
         <div className="max-w-2xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-xl">
             <h2 className="text-2xl sm:text-3xl font-bold mb-6 text-white collaborator-heading">
-              Contacts:
+              {t('media.contacts.title')}
             </h2>
             
             <div className="space-y-4 mb-8">
@@ -399,13 +399,13 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 <span className="text-2xl">📩</span>
                 <div>
                   <p className="text-white font-semibold text-lg sm:text-xl  mb-1">
-                    Davidson - Head of Media Relations
+                    {t('media.contacts.davidson.name')}
                   </p>
                   <a 
                     href="mailto:pr@zentrais.com" 
                     className="tone-highlight hover:opacity-80 text-base sm:text-lg transition-colors"
                   >
-                    pr@zentrais.com
+                    {t('media.contacts.davidson.email')}
                   </a>
                 </div>
               </div>
@@ -416,7 +416,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 onClick={() => window.location.href = 'mailto:pr@zentrais.com?subject=Interview Request'}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               >
-                Request Interview
+                {t('media.contacts.request.interview')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
               
@@ -424,7 +424,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 onClick={() => window.location.href = 'mailto:pr@zentrais.com?subject=Press Kit Request'}
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex items-center justify-center gap-2"
               >
-                Access Press Kit
+                {t('media.contacts.request.kit')}
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </div>
@@ -437,17 +437,17 @@ Publication History / Focus Area: ${formData.publicationHistory}
         <div className="max-w-2xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-center collaborator-heading">
-              Join the Zenzers Circle
+              {t('media.zenzers.title')}
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center leading-relaxed">
-              Become part of a private media network committed to truth-driven storytelling and ethical influence.
+              {t('media.zenzers.desc')}
             </p>
 
             <form onSubmit={handleFormSubmit} className="space-y-6">
               {/* Full Name */}
               <div>
                 <label htmlFor="fullName" className="block text-white font-semibold mb-2 ">
-                  Full Name
+                  {t('media.zenzers.fullname')}
                 </label>
                 <input
                   type="text"
@@ -455,7 +455,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                   name="fullName"
                   value={formData.fullName}
                   onChange={handleInputChange}
-                  placeholder="Your professional or publication name"
+                  placeholder={t('media.zenzers.fullname.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -464,7 +464,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {/* Email */}
               <div>
                 <label htmlFor="email" className="block text-white font-semibold mb-2 ">
-                  Email
+                  {t('media.zenzers.email')}
                 </label>
                 <input
                   type="email"
@@ -472,7 +472,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  placeholder="youremail@gmail.com"
+                  placeholder={t('media.zenzers.email.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -481,7 +481,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {/* Media Type */}
               <div>
                 <label htmlFor="mediaType" className="block text-white font-semibold mb-2 ">
-                  Media Type
+                  {t('media.zenzers.type')}
                 </label>
                 <input
                   type="text"
@@ -489,7 +489,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                   name="mediaType"
                   value={formData.mediaType}
                   onChange={handleInputChange}
-                  placeholder="Journalist / Influencer / Editor / Podcaster / Publication"
+                  placeholder={t('media.zenzers.type.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -498,7 +498,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {/* Platform or Outlet */}
               <div>
                 <label htmlFor="platform" className="block text-white font-semibold mb-2 ">
-                  Platform or Outlet
+                  {t('media.zenzers.platform')}
                 </label>
                 <input
                   type="text"
@@ -506,7 +506,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                   name="platform"
                   value={formData.platform}
                   onChange={handleInputChange}
-                  placeholder="Link or name of your main channel"
+                  placeholder={t('media.zenzers.platform.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -515,7 +515,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {/* Follower Count / Audience Size */}
               <div>
                 <label htmlFor="followerCount" className="block text-white font-semibold mb-2 ">
-                  Follower Count / Audience Size
+                  {t('media.zenzers.followers')}
                 </label>
                 <input
                   type="text"
@@ -523,7 +523,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                   name="followerCount"
                   value={formData.followerCount}
                   onChange={handleInputChange}
-                  placeholder="(optional for influencers)"
+                  placeholder={t('media.zenzers.followers.placeholder')}
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
               </div>
@@ -531,14 +531,14 @@ Publication History / Focus Area: ${formData.publicationHistory}
               {/* Publication History / Focus Area */}
               <div>
                 <label htmlFor="publicationHistory" className="block text-white font-semibold mb-2 ">
-                  Publication History / Focus Area
+                  {t('media.zenzers.history')}
                 </label>
                 <textarea
                   id="publicationHistory"
                   name="publicationHistory"
                   value={formData.publicationHistory}
                   onChange={handleInputChange}
-                  placeholder="Briefly describe your content focus or recent coverage"
+                  placeholder={t('media.zenzers.history.placeholder')}
                   rows={4}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all resize-none "
@@ -550,7 +550,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
                 type="submit"
                 className="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
               >
-                Apply Now
+                {t('media.zenzers.submit')}
               </Button>
             </form>
           </div>
@@ -563,7 +563,7 @@ Publication History / Focus Area: ${formData.publicationHistory}
           onClick={handleJoinZenzers}
           className="w-full bg-blue-500 text-white hover:bg-blue-600"
         >
-          Join Zenzers
+          {t('media.zenzers.mobile')}
           <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
       </div>

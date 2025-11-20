@@ -31,7 +31,7 @@ function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; s
 }
 
 // Componente de countdown
-function LaunchCountdown() {
+function LaunchCountdown({ t }: { t: (key: string) => string }) {
   const [days, setDays] = useState(0);
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function LaunchCountdown() {
     return () => clearInterval(interval);
   }, []);
 
-  return <span>{days} Days</span>;
+  return <span>{days} {t('investors.countdown.days')}</span>;
 }
 
 export default function InvestorsPage() {
@@ -78,80 +78,80 @@ export default function InvestorsPage() {
 
   const timelineMilestones = [
     {
-      quarter: 'Q1 2026',
-      title: 'Dialog & Perspective MVP Environments Live',
+      quarter: t('investors.timeline.q1.quarter'),
+      title: t('investors.timeline.q1.title'),
       icon: Zap,
     },
     {
-      quarter: 'Q2 2026',
-      title: 'Integrity Token Economy Activated',
+      quarter: t('investors.timeline.q2.quarter'),
+      title: t('investors.timeline.q2.title'),
       icon: DollarSign,
     },
     {
-      quarter: 'Q3 2026',
-      title: 'Exchange Launch & Expansion Phase',
+      quarter: t('investors.timeline.q3.quarter'),
+      title: t('investors.timeline.q3.title'),
       icon: Users,
     },
     {
-      quarter: 'Q4 2026',
-      title: 'Global Integration & Scaling',
+      quarter: t('investors.timeline.q4.quarter'),
+      title: t('investors.timeline.q4.title'),
       icon: Calendar,
     },
   ];
 
   const teamMembers = [
     {
-      name: 'Levi Ezagui',
-      role: 'Founder, CEO & Chief Vision Officer',
-      bio: "Drives Zentrais' global vision and scale — turning the Integrity Economy from concept into infrastructure.",
+      name: t('investors.team.levi.name'),
+      role: t('investors.team.levi.role'),
+      bio: t('investors.team.levi.bio'),
       image: "/Levi Ezagui Picture 1.jpg",
     },
     {
-      name: 'Antonio Lovera',
-      role: 'Co-Founder, CTO & Chief Brand Architect',
-      bio: 'Fuses technology and storytelling to make integrity the core operating system of human-AI collaboration.',
+      name: t('investors.team.antonio.name'),
+      role: t('investors.team.antonio.role'),
+      bio: t('investors.team.antonio.bio'),
       image: "/Antonio Lovera Portrait 3.jpeg",
     },
     {
-      name: 'David Shagalov',
-      role: 'Co-Founder, COO & Chief Integrity Officer',
-      bio: 'Builds ethical systems and operational frameworks that keep integrity measurable, actionable, and alive.',
+      name: t('investors.team.david.name'),
+      role: t('investors.team.david.role'),
+      bio: t('investors.team.david.bio'),
       image: "/David Shagalov Picture 2.jpg",
     },
     {
-      name: 'Declan O\'Beirne',
-      role: 'CFO & Chief Prosperity Officer',
-      bio: 'Aligns finance with purpose — driving transparency, growth, and sustainable value across the Integrity Economy.',
+      name: t('investors.team.declan.name'),
+      role: t('investors.team.declan.role'),
+      bio: t('investors.team.declan.bio'),
       image: "/Declan O'Beirne  Picture 1.jpg",
     },
     {
-      name: 'Rick Faulise',
-      role: 'CTO (Machine) & Chief Digital Officer',
-      bio: 'The Machine CTO — builds Zentrais\' digital backbone, driving infrastructure, data systems, and AI scalability. He ensures the technology performs with speed, precision, and reliability.',
+      name: t('investors.team.rick.name'),
+      role: t('investors.team.rick.role'),
+      bio: t('investors.team.rick.bio'),
       image: null,
     },
     {
-      name: 'Shivani Tripathi',
-      role: 'Chief Systems Architect & Head of Cross-Engine Integration',
-      bio: 'Designs and aligns Zentrais\' end-to-end technical architecture across all Engines. Ensures system consistency, integration flow, and engineering coherence so the entire ecosystem operates as one unified, scalable Intelligent Platform.',
+      name: t('investors.team.shivani.name'),
+      role: t('investors.team.shivani.role'),
+      bio: t('investors.team.shivani.bio'),
       image: null,
     },
     {
-      name: 'Davidson Taylor',
-      role: 'CMO & Chief Narrative Officer',
-      bio: 'Shapes Zentrais\' global voice — translating complex innovation into a story of truth, trust, and transformation.',
+      name: t('investors.team.davidson.name'),
+      role: t('investors.team.davidson.role'),
+      bio: t('investors.team.davidson.bio'),
       image: null,
     },
     {
-      name: 'Advisory Board',
-      role: 'Global Leaders in AI Ethics, Finance, Venture Strategy, and Human Systems Design',
-      bio: 'Global leaders in AI Ethics, Finance, Venture Strategy, and Human Systems Design guiding Zentrais\' governance and long-term impact.',
+      name: t('investors.team.advisory.name'),
+      role: t('investors.team.advisory.role'),
+      bio: t('investors.team.advisory.bio'),
       image: null,
     },
     {
-      name: 'The 60 Original Zenzers',
-      role: 'Founding Team of Professionals and Pioneers',
-      bio: 'Visionaries, builders, and believers turning the Integrity Economy into reality — proving that integrity can scale.',
+      name: t('investors.team.zenzers.name'),
+      role: t('investors.team.zenzers.role'),
+      bio: t('investors.team.zenzers.bio'),
       image: null,
     },
   ];
@@ -261,8 +261,7 @@ export default function InvestorsPage() {
               <span className="tone-highlight collaborator-heading">{t('investors.find.type.subtitle')}</span>
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-2xl mx-auto collaborator-body">
-              Discover how your investment philosophy<br />
-              aligns with the Integrity Economy.
+              {t('investors.find.type.desc')}
             </p>
           </div>
 
@@ -621,14 +620,14 @@ export default function InvestorsPage() {
             <button
               onClick={prevMember}
               className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 sm:-translate-x-8 md:-translate-x-12 bg-indigo-500/80 hover:bg-indigo-500 text-white rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110 shadow-lg z-10"
-              aria-label="Previous member"
+              aria-label={t('investors.team.navigation.previous')}
             >
               <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
             <button
               onClick={nextMember}
               className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 sm:translate-x-8 md:translate-x-12 bg-indigo-500/80 hover:bg-indigo-500 text-white rounded-full p-2 sm:p-3 transition-all duration-300 hover:scale-110 shadow-lg z-10"
-              aria-label="Next member"
+              aria-label={t('investors.team.navigation.next')}
             >
               <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </button>
@@ -644,7 +643,7 @@ export default function InvestorsPage() {
                       ? 'bg-indigo-500 w-8 sm:w-10'
                       : 'bg-white/30 hover:bg-white/50'
                   }`}
-                  aria-label={`Go to member ${index + 1}`}
+                  aria-label={`${t('investors.team.navigation.go')} ${index + 1}`}
                 />
               ))}
             </div>
@@ -819,7 +818,7 @@ export default function InvestorsPage() {
           </DialogHeader>
           <div className="py-2">
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-normal collaborator-body">
-              A visionary profile that seeks high-potential opportunities in early-stage and emerging markets. Identifies value before the mainstream, combining strategic analysis with a forward-thinking mindset to unlock new frontiers of growth.
+              {t('investors.find.frontier.modal')}
             </p>
           </div>
         </DialogContent>
@@ -834,7 +833,7 @@ export default function InvestorsPage() {
           </DialogHeader>
           <div className="py-2">
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-normal collaborator-body">
-              An investor committed to generating both financial returns and meaningful change. Allocates capital to initiatives that create positive social or environmental impact, balancing profitability with responsibility and purpose.
+              {t('investors.find.impact.modal')}
             </p>
           </div>
         </DialogContent>
@@ -849,7 +848,7 @@ export default function InvestorsPage() {
           </DialogHeader>
           <div className="py-2">
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-normal collaborator-body">
-              A long-term–oriented investor focused on building and preserving value for future generations. Prioritizes stability, continuity, and strategic decision-making that reflects a lasting vision and a durable legacy.
+              {t('investors.find.legacy.modal')}
             </p>
           </div>
         </DialogContent>

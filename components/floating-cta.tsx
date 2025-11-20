@@ -2,19 +2,21 @@
 
 import { usePathname } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
+import { useLanguage } from '../contexts/language-context';
 
 export default function FloatingCTA() {
   const pathname = usePathname();
+  const { t } = useLanguage();
 
   const getCTAText = () => {
     if (pathname.startsWith('/investors')) {
-      return 'Access the Investor Hub';
+      return t('floating.cta.investors');
     } else if (pathname.startsWith('/user')) {
-      return 'Join Waitlist';
+      return t('floating.cta.user');
     } else if (pathname.startsWith('/media')) {
-      return 'Join the Zenzers Circle';
+      return t('floating.cta.media');
     } else if (pathname.startsWith('/collaborator')) {
-      return 'Start Collaboration';
+      return t('floating.cta.collaborator');
     }
     return null;
   };

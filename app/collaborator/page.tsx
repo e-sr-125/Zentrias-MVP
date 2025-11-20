@@ -96,17 +96,17 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
             {/* Left Section - Text Content */}
             <div className="text-left flex flex-col justify-center">
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-white leading-tight collaborator-heading">
-                Collaboration is the{' '}
-                <span className="tone-highlight">New Competition.</span>
+                {t('collaborator.competition.title')}{' '}
+                <span className="tone-highlight">{t('collaborator.competition.new')}</span>
               </h1>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                Partner with Zentrais to unlock measurable trust, co-create with innovators, and integrate integrity at scale transforming how your brand connects, performs, and leads.
+                {t('collaborator.competition.desc')}
               </p>
               <Button
                 onClick={handleStartCollaboration}
                 className="tone-button text-white text-lg px-8 py-6 rounded-xl font-bold transition-all duration-500 hover:scale-105"
               >
-                Start Collaboration
+                {t('collaborator.competition.cta')}
               </Button>
             </div>
 
@@ -136,10 +136,10 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
             {/* Left Section - Text Content */}
             <div className="text-left">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight collaborator-heading">
-                Why Collaborate with Zentrais?
+                {t('collaborator.why.title2')}
               </h2>
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
-                Unlock measurable impact, co-create with innovators, and integrate integrity into every aspect of your brand.
+                {t('collaborator.why.desc2')}
               </p>
             </div>
 
@@ -149,25 +149,25 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">Proven Impact:</strong> Data-driven insights and measurable engagement that show integrity in action.
+                    <strong className="text-white">{t('collaborator.why.bullet1.title')}</strong> {t('collaborator.why.bullet1.desc')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">Strategic Co-Creation:</strong> Work hand-in-hand with our team to design campaigns, products, and research aligned with your goals.
+                    <strong className="text-white">{t('collaborator.why.bullet2.title')}</strong> {t('collaborator.why.bullet2.desc')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">Transparency & Credibility:</strong> Verified trust tools and storytelling frameworks elevate your brand&apos;s public and internal reputation.
+                    <strong className="text-white">{t('collaborator.why.bullet3.title')}</strong> {t('collaborator.why.bullet3.desc')}
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
                   <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">Scalable Partnership:</strong> Grow your collaboration from pilots to enterprise-wide initiatives with clear metrics.
+                    <strong className="text-white">{t('collaborator.why.bullet4.title')}</strong> {t('collaborator.why.bullet4.desc')}
                   </span>
                 </li>
               </ul>
@@ -181,25 +181,25 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-white leading-tight collaborator-heading">
-              Ways to Collaborate
+              {t('collaborator.ways.title')}
             </h2>
             <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
-              Choose the path that aligns with your brand goals and start driving measurable impact with Zentrals.
+              {t('collaborator.ways.desc')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 items-stretch">
             {/* Research Alliances Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
-              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center flex-shrink-0 h-[3.5rem] sm:h-[4rem] flex items-center justify-center leading-tight">Research Alliances</h3>
+              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center flex-shrink-0 h-[3.5rem] sm:h-[4rem] flex items-center justify-center leading-tight">{t('collaborator.ways.research.title')}</h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow min-h-0">
-                Partner with our research team to co-create reports, uncover emerging ethical business trends, and access data-backed insights for strategic planning.
+                {t('collaborator.ways.research.desc')}
               </p>
               <Button
                 onClick={() => window.location.href = 'mailto:collaborators@zentrais.com?subject=Research Alliances Request'}
                 className="tone-button w-full text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0 mt-auto"
               >
-                Download Kit
+                {t('collaborator.ways.research.cta')}
               </Button>
             </div>
 
@@ -207,27 +207,27 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
               <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center flex-shrink-0 h-[3.5rem] sm:h-[4rem] flex items-center justify-center leading-tight">{t('collaborator.ways.marketplace.title')}</h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow min-h-0">
-                Integrate Zentrals&apos; verified trust tools into your products, enhancing credibility with consumers through certifications, supply chain tracking, and integrity badges.
+                {t('collaborator.ways.marketplace.desc')}
               </p>
               <Button
                 onClick={() => window.location.href = 'mailto:collaborators@zentrais.com?subject=Exchange Integration Request'}
                 className="tone-button w-full text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0 mt-auto"
               >
-                View Updates
+                {t('collaborator.ways.marketplace.cta')}
               </Button>
             </div>
 
             {/* Co-Brand Campaigns Card */}
             <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 hover:scale-105 flex flex-col h-full">
-              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center flex-shrink-0 h-[3.5rem] sm:h-[4rem] flex items-center justify-center leading-tight">Co-Brand Campaigns</h3>
+              <h3 className="text-2xl sm:text-3xl text-white mb-4 collaborator-heading text-center flex-shrink-0 h-[3.5rem] sm:h-[4rem] flex items-center justify-center leading-tight">{t('collaborator.ways.cobrand.title')}</h3>
               <p className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 flex-grow min-h-0">
-                Launch campaigns highlighting ethical leadership and measurable outcomes. Co-create content, while tracking engagement and audience growth.
+                {t('collaborator.ways.cobrand.desc')}
               </p>
               <Button
                 onClick={() => window.location.href = 'mailto:collaborators@zentrais.com?subject=Co-Brand Campaigns Request'}
                 className="tone-button w-full text-white text-base sm:text-lg px-6 py-3 rounded-xl font-semibold transition-all duration-300 hover:scale-105 flex-shrink-0 mt-auto"
               >
-                Read Briefs
+                {t('collaborator.ways.cobrand.cta')}
               </Button>
             </div>
           </div>
@@ -239,17 +239,17 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
         <div className="max-w-2xl mx-auto">
           <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-xl">
             <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4 text-white text-center collaborator-heading">
-              Start Your Collaboration
+              {t('collaborator.start.title')}
             </h2>
             <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center leading-relaxed">
-              Fill out a few details to explore how your brand can co-create, integrate, and drive measurable impact with Zentrais.
+              {t('collaborator.start.desc')}
             </p>
 
             <form onSubmit={handleCollaborationFormSubmit} className="space-y-6">
               {/* Brand / Company Name */}
               <div>
                 <label htmlFor="brandName" className="block text-white font-semibold mb-2 ">
-                  Brand / Company Name
+                  {t('collaborator.start.brand')}
                 </label>
                 <input
                   type="text"
@@ -257,7 +257,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                   name="brandName"
                   value={collaborationFormData.brandName}
                   onChange={handleCollaborationInputChange}
-                  placeholder="Full legal or brand name"
+                  placeholder={t('collaborator.start.brand.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -266,7 +266,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
               {/* Contact Person */}
               <div>
                 <label htmlFor="contactPerson" className="block text-white font-semibold mb-2 ">
-                  Contact Person
+                  {t('collaborator.start.contact')}
                 </label>
                 <input
                   type="text"
@@ -274,7 +274,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                   name="contactPerson"
                   value={collaborationFormData.contactPerson}
                   onChange={handleCollaborationInputChange}
-                  placeholder="Name of primary point of contact"
+                  placeholder={t('collaborator.start.contact.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -283,7 +283,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
               {/* Email / Phone */}
               <div>
                 <label htmlFor="emailPhone" className="block text-white font-semibold mb-2 ">
-                  Email / Phone
+                  {t('collaborator.start.email')}
                 </label>
                 <input
                   type="text"
@@ -291,7 +291,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                   name="emailPhone"
                   value={collaborationFormData.emailPhone}
                   onChange={handleCollaborationInputChange}
-                  placeholder="For follow-up and scheduling"
+                  placeholder={t('collaborator.start.email.placeholder')}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 />
@@ -300,7 +300,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
               {/* Preferred Collaboration Track */}
               <div>
                 <label htmlFor="collaborationTrack" className="block text-white font-semibold mb-2 ">
-                  Preferred Collaboration Track
+                  {t('collaborator.start.track')}
                 </label>
                 <select
                   id="collaborationTrack"
@@ -310,24 +310,24 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                   required
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
                 >
-                  <option value="" className="bg-slate-900">Select a track...</option>
-                  <option value="Research Alliances" className="bg-slate-900">Research Alliances</option>
+                  <option value="" className="bg-slate-900">{t('collaborator.start.track.select')}</option>
+                  <option value="Research Alliances" className="bg-slate-900">{t('collaborator.start.track.research')}</option>
                   <option value="Exchange Integration" className="bg-slate-900">{t('collaborator.start.track.marketplace')}</option>
-                  <option value="Co-Brand Campaigns" className="bg-slate-900">Co-Brand Campaigns</option>
+                  <option value="Co-Brand Campaigns" className="bg-slate-900">{t('collaborator.start.track.cobrand')}</option>
                 </select>
               </div>
 
               {/* Optional Notes */}
               <div>
                 <label htmlFor="optionalNotes" className="block text-white font-semibold mb-2 ">
-                  Optional Notes
+                  {t('collaborator.start.notes')}
                 </label>
                 <textarea
                   id="optionalNotes"
                   name="optionalNotes"
                   value={collaborationFormData.optionalNotes}
                   onChange={handleCollaborationInputChange}
-                  placeholder="Additional comments or context"
+                  placeholder={t('collaborator.start.notes.placeholder')}
                   rows={4}
                   className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all resize-none "
                 />
@@ -338,7 +338,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                 type="submit"
                 className="tone-button w-full text-white text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
               >
-                Apply Now
+                {t('collaborator.start.submit')}
               </Button>
             </form>
           </div>
@@ -351,7 +351,7 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
           onClick={handleStartCollaboration}
           className="tone-button w-full text-white"
         >
-          Start Collaboration
+          {t('collaborator.start.mobile')}
           <ArrowRight className="w-4 h-4 ml-2" />
         </Button>
       </div>
