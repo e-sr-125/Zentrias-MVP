@@ -45,7 +45,7 @@ export default function HomePage() {
 
   return (
     <div
-      className="min-h-screen bg-cover bg-center bg-fixed"
+      className="min-h-screen bg-cover bg-center bg-no-repeat bg-scroll md:bg-fixed"
       style={{ backgroundImage: `url('/fondo-new.jpg')` }}
     >
       {/* HEADLINE SECTION */}
