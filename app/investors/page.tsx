@@ -134,7 +134,7 @@ export default function InvestorsPage() {
       name: t('investors.team.shivani.name'),
       role: t('investors.team.shivani.role'),
       bio: t('investors.team.shivani.bio'),
-      image: null,
+      image: "/Shivani Tripathi Prof_H.jpeg",
     },
     {
       name: t('investors.team.davidson.name'),
