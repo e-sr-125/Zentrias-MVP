@@ -3,9 +3,10 @@
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '../../components/ui/button';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe, Target, Zap, TrendingUp, Sparkles } from 'lucide-react';
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
+import { motion } from 'framer-motion';
 
 // These will be defined inside the component to use translations
 
@@ -31,8 +32,15 @@ export default function CollaboratorPage() {
     setParticles(newParticles);
   }, []);
 
-  const handleBecomeCollaborator = () => {
-    window.location.href = 'mailto:collaborators@zentrais.com?subject=Become a Collaborator';
+  const handleBecomePartner = () => {
+    const formElement = document.getElementById('collaborator-form');
+    if (formElement) {
+      formElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const handleContactPartnerships = () => {
+    window.location.href = 'mailto:partnerships@zentrais.com?subject=Partnerships Inquiry';
   };
 
   const handleStartCollaboration = () => {
@@ -89,30 +97,86 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
         </div>
       </div>
 
-      {/* Collaboration is the New Competition Section */}
-      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 pb-12 sm:pb-16 md:pb-24">
+      {/* Hero Section */}
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-32 sm:pt-36 md:pt-40 pb-12 sm:pb-16 md:pb-24 overflow-hidden">
+        {/* Animated Background Orbs - simplified for performance */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute top-1/4 -left-20 w-96 h-96 bg-indigo-500/10 rounded-full blur-2xl opacity-50"></div>
+          <div className="absolute top-1/2 -right-20 w-96 h-96 bg-purple-500/10 rounded-full blur-2xl opacity-50"></div>
+        </div>
+
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
             {/* Left Section - Text Content */}
-            <div className="text-left flex flex-col justify-center">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-6 text-white leading-tight collaborator-heading">
-                {t('collaborator.competition.title')}
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-                {t('collaborator.competition.desc')}
-              </p>
-              <Button
-                onClick={handleStartCollaboration}
-                className="tone-button text-white text-lg px-8 py-6 rounded-xl font-bold transition-all duration-500 hover:scale-105"
+            <div className="text-left flex flex-col justify-center relative z-10">
+              {/* Headline with animation */}
+              <motion.h1
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight collaborator-heading tracking-tight relative"
               >
+                <span className="relative inline-block">
+                {t('collaborator.competition.title')}
+                  {/* Shimmer effect */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 opacity-0 hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></span>
+                </span>
+              </motion.h1>
+
+              {/* Sub-headline with animation */}
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+                className="text-lg sm:text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed collaborator-body relative group"
+              >
+                <span className="relative inline-block">
+                {t('collaborator.competition.desc')}
+                  {/* Subtle glow on hover */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-indigo-400/0 via-indigo-400/10 to-indigo-400/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></span>
+                </span>
+              </motion.p>
+
+              {/* CTAs with enhanced animations */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4 md:gap-6 w-full sm:w-auto"
+              >
+                <Button
+                  onClick={handleBecomePartner}
+                  className="group relative tone-button text-white text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-indigo-500/50 flex items-center justify-center gap-2 overflow-hidden w-full sm:w-auto"
+                >
+                  {/* Animated background gradient */}
+                  <span className="absolute inset-0 bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                  <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
+                  <span className="relative z-10 flex items-center gap-2">
                 {t('collaborator.competition.cta')}
+                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform duration-300" />
+                  </span>
+                </Button>
+                <Button
+                  onClick={handleContactPartnerships}
+                  variant="outline"
+                  className="group relative bg-transparent border-2 border-indigo-400/50 text-white text-sm sm:text-base md:text-lg px-6 sm:px-8 md:px-10 py-4 sm:py-5 md:py-6 rounded-xl font-semibold transition-all duration-300 hover:scale-105 hover:border-indigo-400 hover:bg-indigo-400/20 hover:shadow-2xl hover:shadow-indigo-500/30 overflow-hidden w-full sm:w-auto whitespace-nowrap"
+                >
+                  {/* Animated border glow */}
+                  <span className="absolute inset-0 border-2 border-indigo-400 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+                  <span className="relative z-10 text-center">{t('collaborator.competition.cta.secondary')}</span>
               </Button>
+              </motion.div>
             </div>
 
             {/* Right Section - Image */}
-            <div className="flex items-center justify-center lg:justify-end self-stretch">
-              <div className="relative w-full max-w-2xl h-full">
-                <div className="rounded-3xl overflow-hidden shadow-2xl h-full">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              className="flex items-center justify-center lg:justify-end self-stretch relative z-10 mt-8 lg:mt-0"
+            >
+              <div className="relative w-full max-w-2xl">
+                <div className="rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl aspect-[4/3] sm:aspect-auto">
                   <Image
                     src="/meeting.png"
                     alt="Business meeting with dashboard"
@@ -123,55 +187,188 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
                   />
                 </div>
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Why Collaborate with Zentrais Section */}
+      {/* Why Partner with Zentrais Section */}
       <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-start">
-            {/* Left Section - Text Content */}
-            <div className="text-left">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight collaborator-heading">
-                {t('collaborator.why.title2')}
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-12 sm:mb-16"
+          >
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-4 text-white leading-tight collaborator-heading tracking-tight">
+              {t('collaborator.why.partner.title')}
               </h2>
-              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 leading-relaxed">
-                {t('collaborator.why.desc2')}
-              </p>
-            </div>
+            <div className="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent"></div>
+          </motion.div>
 
-            {/* Right Section - Bullet Points Box */}
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl border-2 border-dashed border-gray-400/50 p-6 sm:p-8">
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
-                  <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">{t('collaborator.why.bullet1.title')}</strong> {t('collaborator.why.bullet1.desc')}
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
-                  <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">{t('collaborator.why.bullet2.title')}</strong> {t('collaborator.why.bullet2.desc')}
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
-                  <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">{t('collaborator.why.bullet3.title')}</strong> {t('collaborator.why.bullet3.desc')}
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full mt-2 flex-shrink-0 tone-highlight" style={{ backgroundColor: 'var(--tone-primary)' }}></div>
-                  <span className="text-gray-200 text-sm sm:text-base leading-relaxed ">
-                    <strong className="text-white">{t('collaborator.why.bullet4.title')}</strong> {t('collaborator.why.bullet4.desc')}
-                  </span>
-                </li>
-              </ul>
+          {/* Mini Infographic Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            {/* Reach */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.1 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="tone-card bg-gradient-to-br from-indigo-500/10 via-indigo-500/5 to-slate-800/40 rounded-2xl border-2 border-indigo-400/30 p-6 sm:p-8 hover:border-indigo-400/60 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-indigo-500/20 border-2 border-indigo-400/40 flex items-center justify-center mb-4 group-hover:bg-indigo-500/30 group-hover:border-indigo-400/60 transition-all">
+                <Globe className="w-6 h-6 text-indigo-400" />
+              </div>
+              <h3 className="text-xl sm:text-2xl text-white mb-3 collaborator-heading group-hover:text-indigo-300 transition-colors">
+                {t('collaborator.why.reach.title')}
+              </h3>
+              <p className="text-gray-200 text-sm sm:text-base leading-relaxed collaborator-body group-hover:text-white transition-colors">
+                {t('collaborator.why.reach.desc')}
+              </p>
+            </motion.div>
+
+            {/* Relevance */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="tone-card bg-gradient-to-br from-purple-500/10 via-purple-500/5 to-slate-800/40 rounded-2xl border-2 border-purple-400/30 p-6 sm:p-8 hover:border-purple-400/60 hover:shadow-xl hover:shadow-purple-500/20 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-purple-500/20 border-2 border-purple-400/40 flex items-center justify-center mb-4 group-hover:bg-purple-500/30 group-hover:border-purple-400/60 transition-all">
+                <Target className="w-6 h-6 text-purple-400" />
+              </div>
+              <h3 className="text-xl sm:text-2xl text-white mb-3 collaborator-heading group-hover:text-purple-300 transition-colors">
+                {t('collaborator.why.relevance.title')}
+              </h3>
+              <p className="text-gray-200 text-sm sm:text-base leading-relaxed collaborator-body group-hover:text-white transition-colors">
+                {t('collaborator.why.relevance.desc')}
+              </p>
+            </motion.div>
+
+            {/* Innovation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="tone-card bg-gradient-to-br from-pink-500/10 via-pink-500/5 to-slate-800/40 rounded-2xl border-2 border-pink-400/30 p-6 sm:p-8 hover:border-pink-400/60 hover:shadow-xl hover:shadow-pink-500/20 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-pink-500/20 border-2 border-pink-400/40 flex items-center justify-center mb-4 group-hover:bg-pink-500/30 group-hover:border-pink-400/60 transition-all">
+                <Zap className="w-6 h-6 text-pink-400" />
+              </div>
+              <h3 className="text-xl sm:text-2xl text-white mb-3 collaborator-heading group-hover:text-pink-300 transition-colors">
+                {t('collaborator.why.innovation.title')}
+              </h3>
+              <p className="text-gray-200 text-sm sm:text-base leading-relaxed collaborator-body group-hover:text-white transition-colors">
+                {t('collaborator.why.innovation.desc')}
+              </p>
+            </motion.div>
+
+            {/* Brand Enhancement */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.4 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="tone-card bg-gradient-to-br from-cyan-500/10 via-cyan-500/5 to-slate-800/40 rounded-2xl border-2 border-cyan-400/30 p-6 sm:p-8 hover:border-cyan-400/60 hover:shadow-xl hover:shadow-cyan-500/20 transition-all duration-300 group"
+            >
+              <div className="w-12 h-12 rounded-xl bg-cyan-500/20 border-2 border-cyan-400/40 flex items-center justify-center mb-4 group-hover:bg-cyan-500/30 group-hover:border-cyan-400/60 transition-all">
+                <TrendingUp className="w-6 h-6 text-cyan-400" />
             </div>
+              <h3 className="text-xl sm:text-2xl text-white mb-3 collaborator-heading group-hover:text-cyan-300 transition-colors">
+                {t('collaborator.why.brand.title')}
+              </h3>
+              <p className="text-gray-200 text-sm sm:text-base leading-relaxed collaborator-body group-hover:text-white transition-colors">
+                {t('collaborator.why.brand.desc')}
+              </p>
+            </motion.div>
+
+            {/* First-Mover Advantage */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              whileHover={{ scale: 1.02, y: -5 }}
+              className="tone-card bg-gradient-to-br from-emerald-500/10 via-emerald-500/5 to-slate-800/40 rounded-2xl border-2 border-emerald-400/30 p-6 sm:p-8 hover:border-emerald-400/60 hover:shadow-xl hover:shadow-emerald-500/20 transition-all duration-300 group md:col-span-2 lg:col-span-1"
+            >
+              <div className="w-12 h-12 rounded-xl bg-emerald-500/20 border-2 border-emerald-400/40 flex items-center justify-center mb-4 group-hover:bg-emerald-500/30 group-hover:border-emerald-400/60 transition-all">
+                <Sparkles className="w-6 h-6 text-emerald-400" />
+            </div>
+              <h3 className="text-xl sm:text-2xl text-white mb-3 collaborator-heading group-hover:text-emerald-300 transition-colors">
+                {t('collaborator.why.firstmover.title')}
+              </h3>
+              <p className="text-gray-200 text-sm sm:text-base leading-relaxed collaborator-body group-hover:text-white transition-colors">
+                {t('collaborator.why.firstmover.desc')}
+              </p>
+            </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Partner Value Snapshot Section */}
+      <section className="relative z-10 container mx-auto px-4 sm:px-6 pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-24">
+        <div className="max-w-4xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-10 sm:mb-12"
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl mb-4 text-white leading-tight collaborator-heading tracking-tight px-2">
+              {t('collaborator.value.title')}
+            </h2>
+            <div className="w-24 h-1 mx-auto bg-gradient-to-r from-transparent via-indigo-500/60 to-transparent mb-4 sm:mb-6"></div>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-300 leading-relaxed collaborator-body px-2">
+              {t('collaborator.value.intro')}
+            </p>
+          </motion.div>
+
+          {/* Bullet Points */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="tone-card bg-gradient-to-br from-slate-800/40 via-slate-800/30 to-slate-800/40 rounded-2xl sm:rounded-3xl border-2 border-indigo-400/30 p-5 sm:p-6 md:p-8 lg:p-10 hover:border-indigo-400/50 hover:shadow-xl hover:shadow-indigo-500/20 transition-all duration-300"
+          >
+            <ul className="space-y-4 sm:space-y-5">
+              {[
+                'collaborator.value.item1',
+                'collaborator.value.item2',
+                'collaborator.value.item3',
+                'collaborator.value.item4',
+                'collaborator.value.item5',
+                'collaborator.value.item6',
+                'collaborator.value.item7',
+              ].map((key, index) => (
+                <motion.li
+                  key={key}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                  className="flex items-start gap-3 sm:gap-4 group/item"
+                >
+                  <div className="flex-shrink-0 w-5 h-5 sm:w-6 sm:h-6 rounded-lg bg-indigo-500/20 border border-indigo-400/40 flex items-center justify-center mt-0.5 sm:mt-1 group-hover/item:bg-indigo-500/30 group-hover/item:border-indigo-400/60 transition-all">
+                    <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full bg-indigo-400"></div>
+                  </div>
+                  <span className="text-gray-200 text-sm sm:text-base md:text-lg leading-relaxed collaborator-body group-hover/item:text-white transition-colors flex-1">
+                    {t(key)}
+                  </span>
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
         </div>
       </section>
 
