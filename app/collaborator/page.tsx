@@ -7,6 +7,7 @@ import { ArrowRight, Globe, Target, Zap, TrendingUp, Sparkles } from 'lucide-rea
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
 import { motion } from 'framer-motion';
+import CollaboratorForm from '../../components/forms/collaborator-form';
 
 // These will be defined inside the component to use translations
 
@@ -554,111 +555,15 @@ Optional Notes: ${collaborationFormData.optionalNotes || 'Not provided'}
 
       {/* Start Your Collaboration Form Section */}
       <section id="collaborator-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl mb-4 text-white text-center collaborator-heading">
-              {t('collaborator.start.title')}
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-pink-400/30 p-8 sm:p-12 collaborator-tone">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 leading-tight font-sans tracking-tight tone-highlight">
+              Collaborators / Brands Form
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center leading-relaxed">
-              {t('collaborator.start.desc')}
+            <p className="text-base sm:text-lg text-gray-300 text-center mb-8 leading-relaxed font-sans">
+              Qualify potential partners, tech integrations, brand sponsors, and contributors.
             </p>
-
-            <form onSubmit={handleCollaborationFormSubmit} className="space-y-6">
-              {/* Brand / Company Name */}
-              <div>
-                <label htmlFor="brandName" className="block text-white font-semibold mb-2 ">
-                  {t('collaborator.start.brand')}
-                </label>
-                <input
-                  type="text"
-                  id="brandName"
-                  name="brandName"
-                  value={collaborationFormData.brandName}
-                  onChange={handleCollaborationInputChange}
-                  placeholder={t('collaborator.start.brand.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Contact Person */}
-              <div>
-                <label htmlFor="contactPerson" className="block text-white font-semibold mb-2 ">
-                  {t('collaborator.start.contact')}
-                </label>
-                <input
-                  type="text"
-                  id="contactPerson"
-                  name="contactPerson"
-                  value={collaborationFormData.contactPerson}
-                  onChange={handleCollaborationInputChange}
-                  placeholder={t('collaborator.start.contact.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Email / Phone */}
-              <div>
-                <label htmlFor="emailPhone" className="block text-white font-semibold mb-2 ">
-                  {t('collaborator.start.email')}
-                </label>
-                <input
-                  type="text"
-                  id="emailPhone"
-                  name="emailPhone"
-                  value={collaborationFormData.emailPhone}
-                  onChange={handleCollaborationInputChange}
-                  placeholder={t('collaborator.start.email.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Preferred Collaboration Track */}
-              <div>
-                <label htmlFor="collaborationTrack" className="block text-white font-semibold mb-2 ">
-                  {t('collaborator.start.track')}
-                </label>
-                <select
-                  id="collaborationTrack"
-                  name="collaborationTrack"
-                  value={collaborationFormData.collaborationTrack}
-                  onChange={handleCollaborationInputChange}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                >
-                  <option value="" className="bg-slate-900">{t('collaborator.start.track.select')}</option>
-                  <option value="Research Alliances" className="bg-slate-900">{t('collaborator.start.track.research')}</option>
-                  <option value="Exchange Integration" className="bg-slate-900">{t('collaborator.start.track.marketplace')}</option>
-                  <option value="Co-Brand Campaigns" className="bg-slate-900">{t('collaborator.start.track.cobrand')}</option>
-                </select>
-              </div>
-
-              {/* Optional Notes */}
-              <div>
-                <label htmlFor="optionalNotes" className="block text-white font-semibold mb-2 ">
-                  {t('collaborator.start.notes')}
-                </label>
-                <textarea
-                  id="optionalNotes"
-                  name="optionalNotes"
-                  value={collaborationFormData.optionalNotes}
-                  onChange={handleCollaborationInputChange}
-                  placeholder={t('collaborator.start.notes.placeholder')}
-                  rows={4}
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all resize-none "
-                />
-              </div>
-
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                className="tone-button w-full text-white text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
-              >
-                {t('collaborator.start.submit')}
-              </Button>
-            </form>
+            <CollaboratorForm />
           </div>
         </div>
       </section>

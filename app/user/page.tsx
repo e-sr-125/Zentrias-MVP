@@ -6,6 +6,7 @@ import { Button } from '../../components/ui/button';
 import { MessageSquare, Gavel, ShoppingBag, ArrowRight, CheckCircle2, Circle, Lock, Shield, CheckCircle, DollarSign, ChevronDown, Play } from 'lucide-react';
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
+import BetaUserForm from '../../components/forms/beta-user-form';
 
 export default function UserPage() {
   const { t } = useLanguage();
@@ -58,9 +59,6 @@ export default function UserPage() {
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number }>>([]);
   const [currentParticipants, setCurrentParticipants] = useState(342);
   const [selectedPhone, setSelectedPhone] = useState(1);
-  const [waitlistName, setWaitlistName] = useState('');
-  const [waitlistEmail, setWaitlistEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
 
   // Generar partículas de luz
   useEffect(() => {
@@ -526,117 +524,18 @@ export default function UserPage() {
         </div>
       </section>
 
-      {/* Waitlist Signup Form */}
+      {/* Beta User Signup Form */}
       <section id="waitlist-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <div className="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-blue-400/30 p-8 sm:p-12">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-6 text-white leading-tight font-sans tracking-tight">
-              {t('user.waitlist.title.part1')}
-              <br />
-              {t('user.waitlist.title.part2')}
-              <br />
-              {t('user.waitlist.title.part3')}
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 leading-tight font-sans tracking-tight tone-highlight">
+              Beta User Form
             </h2>
             <p className="text-base sm:text-lg text-gray-300 text-center mb-8 leading-relaxed font-sans">
-              {t('user.waitlist.desc')}
+              Help us capture early user feedback, expectations, blockers, and willingness to participate.
             </p>
             
-            <form 
-              action="https://api.web3forms.com/submit"
-              method="POST"
-              onSubmit={async (e) => {
-                e.preventDefault();
-                const formData = new FormData(e.currentTarget);
-                try {
-                  const response = await fetch('https://api.web3forms.com/submit', {
-                    method: 'POST',
-                    body: formData
-                  });
-                  
-                  if (response.ok) {
-                    setIsSubmitted(true);
-                    setWaitlistName('');
-                    setWaitlistEmail('');
-                    
-                    // Después de 2 segundos, volver al estado normal
-                    setTimeout(() => {
-                      setIsSubmitted(false);
-                    }, 2000);
-                  }
-                } catch (error) {
-                  console.error('Error al enviar el formulario:', error);
-                }
-              }}
-              className="space-y-6"
-            >
-              <input type="hidden" name="access_key" value="90c589f1-3e39-401f-a2ff-3aa0d2b96c05" />
-              <input type="hidden" name="to" value="rodriguezadri500@gmail.com" />
-              
-              <div>
-                <label htmlFor="waitlist-name" className="block text-white font-medium mb-2 text-sm sm:text-base font-sans">
-                  {t('user.waitlist.name')}
-                </label>
-                <input
-                  id="waitlist-name"
-                  type="text"
-                  name="name"
-                  value={waitlistName}
-                  onChange={(e) => setWaitlistName(e.target.value)}
-                  placeholder={t('user.waitlist.name.placeholder')}
-                  className="w-full px-4 py-3 rounded-lg border border-blue-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all font-sans text-sm sm:text-base"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="waitlist-email" className="block text-white font-medium mb-2 text-sm sm:text-base font-sans">
-                  {t('user.waitlist.email')}
-                </label>
-                <input
-                  id="waitlist-email"
-                  type="email"
-                  name="email"
-                  value={waitlistEmail}
-                  onChange={(e) => setWaitlistEmail(e.target.value)}
-                  placeholder={t('user.waitlist.email.placeholder')}
-                  className="w-full px-4 py-3 rounded-lg border border-blue-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-400/20 transition-all font-sans text-sm sm:text-base"
-                  required
-                />
-              </div>
-              
-              <button
-                type="submit"
-                disabled={isSubmitted}
-                className={`tone-button w-full text-white font-bold py-4 px-6 rounded-lg transition-all duration-500 text-lg sm:text-xl font-sans relative overflow-hidden ${
-                  isSubmitted 
-                    ? 'scale-75' 
-                    : 'hover:scale-105'
-                }`}
-              >
-                <span className={`flex items-center justify-center gap-2 transition-all duration-500 ${
-                  isSubmitted ? 'opacity-0 scale-0' : 'opacity-100 scale-100'
-                }`}>
-                  {t('user.waitlist.submit')}
-                </span>
-                <span className={`absolute inset-0 flex items-center justify-center transition-all duration-500 ${
-                  isSubmitted ? 'opacity-100 scale-100' : 'opacity-0 scale-0'
-                }`}>
-                  <svg 
-                    className="w-6 h-6 text-green-400" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    viewBox="0 0 24 24"
-                  >
-                    <path 
-                      strokeLinecap="round" 
-                      strokeLinejoin="round" 
-                      strokeWidth={3} 
-                      d="M5 13l4 4L19 7" 
-                    />
-                  </svg>
-                </span>
-              </button>
-            </form>
+            <BetaUserForm />
           </div>
         </div>
       </section>

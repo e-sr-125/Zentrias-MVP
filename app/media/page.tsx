@@ -6,6 +6,7 @@ import { Button } from '../../components/ui/button';
 import { Folder, Megaphone, BookOpen, ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
+import MediaForm from '../../components/forms/media-form';
 
 // These will be defined inside the component to use translations
 
@@ -432,127 +433,17 @@ Publication History / Focus Area: ${formData.publicationHistory}
         </div>
       </section>
 
-      {/* Join the Zenzers Circle Form Section */}
+      {/* Media / Zenzers Form Section */}
       <section id="media-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 sm:p-8 md:p-12 shadow-xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-white text-center collaborator-heading">
-              {t('media.zenzers.title')}
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-blue-400/30 p-8 sm:p-12 media-tone">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 leading-tight font-sans tracking-tight tone-highlight">
+              Media / Zenzers Form
             </h2>
-            <p className="text-lg sm:text-xl text-gray-300 mb-8 text-center leading-relaxed">
-              {t('media.zenzers.desc')}
+            <p className="text-base sm:text-lg text-gray-300 text-center mb-8 leading-relaxed font-sans">
+              Support journalists, content creators, public figures, and supporters.
             </p>
-
-            <form onSubmit={handleFormSubmit} className="space-y-6">
-              {/* Full Name */}
-              <div>
-                <label htmlFor="fullName" className="block text-white font-semibold mb-2 ">
-                  {t('media.zenzers.fullname')}
-                </label>
-                <input
-                  type="text"
-                  id="fullName"
-                  name="fullName"
-                  value={formData.fullName}
-                  onChange={handleInputChange}
-                  placeholder={t('media.zenzers.fullname.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Email */}
-              <div>
-                <label htmlFor="email" className="block text-white font-semibold mb-2 ">
-                  {t('media.zenzers.email')}
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  placeholder={t('media.zenzers.email.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Media Type */}
-              <div>
-                <label htmlFor="mediaType" className="block text-white font-semibold mb-2 ">
-                  {t('media.zenzers.type')}
-                </label>
-                <input
-                  type="text"
-                  id="mediaType"
-                  name="mediaType"
-                  value={formData.mediaType}
-                  onChange={handleInputChange}
-                  placeholder={t('media.zenzers.type.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Platform or Outlet */}
-              <div>
-                <label htmlFor="platform" className="block text-white font-semibold mb-2 ">
-                  {t('media.zenzers.platform')}
-                </label>
-                <input
-                  type="text"
-                  id="platform"
-                  name="platform"
-                  value={formData.platform}
-                  onChange={handleInputChange}
-                  placeholder={t('media.zenzers.platform.placeholder')}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Follower Count / Audience Size */}
-              <div>
-                <label htmlFor="followerCount" className="block text-white font-semibold mb-2 ">
-                  {t('media.zenzers.followers')}
-                </label>
-                <input
-                  type="text"
-                  id="followerCount"
-                  name="followerCount"
-                  value={formData.followerCount}
-                  onChange={handleInputChange}
-                  placeholder={t('media.zenzers.followers.placeholder')}
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all "
-                />
-              </div>
-
-              {/* Publication History / Focus Area */}
-              <div>
-                <label htmlFor="publicationHistory" className="block text-white font-semibold mb-2 ">
-                  {t('media.zenzers.history')}
-                </label>
-                <textarea
-                  id="publicationHistory"
-                  name="publicationHistory"
-                  value={formData.publicationHistory}
-                  onChange={handleInputChange}
-                  placeholder={t('media.zenzers.history.placeholder')}
-                  rows={4}
-                  required
-                  className="w-full px-4 py-3 bg-white/10 border border-gray-400/30 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:border-pink-500 focus:ring-2 focus:ring-pink-500/50 transition-all resize-none "
-                />
-              </div>
-
-              {/* Submit Button */}
-              <Button
-                type="submit"
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white text-lg px-8 py-4 rounded-xl font-semibold transition-all duration-300 hover:scale-105"
-              >
-                {t('media.zenzers.submit')}
-              </Button>
-            </form>
+            <MediaForm />
           </div>
         </div>
       </section>

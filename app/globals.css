@@ -512,7 +512,7 @@ body {
 }
 
 .media-tone .tone-highlight {
-  color: var(--tone-primary);
+  color: #93c5fd; /* Lighter blue for better visibility */
 }
 
 .media-tone .tone-card {

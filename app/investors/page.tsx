@@ -8,6 +8,7 @@ import { ArrowRight, Download, Calendar, ChevronLeft, ChevronRight, AlertTriangl
 import Footer from '../../components/footer';
 import { useLanguage } from '../../contexts/language-context';
 import { motion, AnimatePresence } from 'framer-motion';
+import InvestorForm from '../../components/forms/investor-form';
 
 // Componente de contador animado
 function AnimatedCounter({ end, suffix = '', duration = 2000 }: { end: number; suffix?: string; duration?: number }) {
@@ -1124,120 +1125,17 @@ export default function InvestorsPage() {
         </div>
       </section>
 
-      {/* Access the Investor Hub Form Section */}
-      <section id="investor-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-16 sm:py-20 md:py-24">
-        <div className="max-w-2xl mx-auto">
-          <div className="bg-gradient-to-br from-slate-900/80 to-slate-800/80  rounded-3xl border border-indigo-400/30 p-8 sm:p-12 shadow-2xl">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-6 text-white leading-tight text-center collaborator-heading tracking-tight">
-              {t('investors.hub.title')}
+      {/* Investor Form Section */}
+      <section id="investor-form" className="relative z-10 container mx-auto px-4 sm:px-6 py-12 sm:py-16 md:py-24">
+        <div className="max-w-5xl mx-auto">
+          <div className="bg-slate-900/60 backdrop-blur-sm rounded-2xl border border-indigo-400/30 p-8 sm:p-12 investors-tone">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 leading-tight font-sans tracking-tight tone-highlight">
+              Investor Form
             </h2>
-            <p className="text-base sm:text-lg text-gray-300 mb-10 leading-relaxed text-center collaborator-body">
-              {t('investors.hub.desc')}
+            <p className="text-base sm:text-lg text-gray-300 text-center mb-8 leading-relaxed font-sans">
+              Qualify investor interest, stage, focus, and expected material for next steps.
             </p>
-            
-            <form 
-              onSubmit={(e) => {
-                e.preventDefault();
-                handleInvestorRelations();
-              }}
-              className="space-y-6"
-            >
-              <div>
-                <label htmlFor="full-name" className="block text-white font-medium mb-2 text-sm sm:text-base">
-                  {t('investors.hub.fullname')}
-                </label>
-                <input
-                  id="full-name"
-                  type="text"
-                  value={formData.fullName}
-                  onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                  placeholder={t('investors.hub.fullname.placeholder')}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-sm sm:text-base hover:border-indigo-400/50"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="role-organization" className="block text-white font-medium mb-2 text-sm sm:text-base">
-                  {t('investors.hub.role')}
-                </label>
-                <input
-                  id="role-organization"
-                  type="text"
-                  value={formData.roleOrganization}
-                  onChange={(e) => setFormData({ ...formData, roleOrganization: e.target.value })}
-                  placeholder={t('investors.hub.role.placeholder')}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-sm sm:text-base hover:border-indigo-400/50"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="investment-focus" className="block text-white font-medium mb-2 text-sm sm:text-base">
-                  {t('investors.hub.focus')}
-                </label>
-                <input
-                  id="investment-focus"
-                  type="text"
-                  value={formData.investmentFocus}
-                  onChange={(e) => setFormData({ ...formData, investmentFocus: e.target.value })}
-                  placeholder={t('investors.hub.focus.placeholder')}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-sm sm:text-base hover:border-indigo-400/50"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="amount-interested" className="block text-white font-medium mb-2 text-sm sm:text-base">
-                  {t('investors.hub.amount')}
-                </label>
-                <input
-                  id="amount-interested"
-                  type="text"
-                  value={formData.amountInterested}
-                  onChange={(e) => setFormData({ ...formData, amountInterested: e.target.value })}
-                  placeholder={t('investors.hub.amount.placeholder')}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-sm sm:text-base hover:border-indigo-400/50"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="email" className="block text-white font-medium mb-2 text-sm sm:text-base">
-                  {t('investors.hub.email')}
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  placeholder={t('investors.hub.email.placeholder')}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-sm sm:text-base hover:border-indigo-400/50"
-                  required
-                />
-              </div>
-              
-              <div>
-                <label htmlFor="comments" className="block text-white font-medium mb-2 text-sm sm:text-base">
-                  {t('investors.hub.comments')}
-                </label>
-                <textarea
-                  id="comments"
-                  value={formData.comments}
-                  onChange={(e) => setFormData({ ...formData, comments: e.target.value })}
-                  placeholder={t('investors.hub.comments.placeholder')}
-                  rows={4}
-                  className="w-full px-4 py-3 rounded-xl border border-indigo-400/30 bg-slate-800/50 text-white placeholder-gray-400 focus:outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-400/20 transition-all text-sm sm:text-base resize-none hover:border-indigo-400/50"
-                />
-              </div>
-              
-              <button
-                type="submit"
-                className="w-full bg-indigo-500 hover:bg-indigo-600 text-white font-semibold py-4 px-6 rounded-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-lg hover:shadow-indigo-500/30 text-base sm:text-lg mt-2"
-              >
-                {t('investors.hub.submit')}
-              </button>
-            </form>
+            <InvestorForm />
           </div>
         </div>
       </section>
