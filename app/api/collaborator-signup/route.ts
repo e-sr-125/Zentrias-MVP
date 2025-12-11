@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend lazily to avoid build-time errors when API key is not available
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+  return new Resend(apiKey);
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -75,6 +82,7 @@ VALUE EXCHANGE:
 What value do you bring to Zentrais: ${formData.valueYouBring || ''}
 What value do you expect from Zentrais: ${formData.valueYouExpect || ''}`;
 
+    const resend = getResend();
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
       to: process.env.RESEND_TO_EMAIL_COLLAB || 'tech@zentrais.com',

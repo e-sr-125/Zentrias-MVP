@@ -1,7 +1,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+// Initialize Resend lazily to avoid build-time errors when API key is not available
+const getResend = () => {
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY is not configured');
+  }
+  return new Resend(apiKey);
+};
 
 export async function POST(request: NextRequest) {
   try {
@@ -93,6 +100,7 @@ Any questions for the Founders: ${formData.questionsForFounders || ''}`;
     // Send email using Resend
     // Email addresses are configured in .env.local
     // This is the investor form, so using RESEND_TO_EMAIL_INVES
+    const resend = getResend();
     const { data, error } = await resend.emails.send({
       from: process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev',
       to: process.env.RESEND_TO_EMAIL_INVES || 'tech@zentrais.com',
