@@ -126,4 +126,9 @@ Agrees to receive Beta updates: ${formData.consent ? 'Yes' : 'No'}`;
     );
   }
 }
-
+// Send email using Resend
+// Send email using Resend
+// Send email using Resend
+// Send email using Resend
+// Send email using Resend
+// Send email using Resend
