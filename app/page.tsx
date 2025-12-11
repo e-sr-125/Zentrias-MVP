@@ -260,7 +260,7 @@ export default function HomePage() {
                 {/* Video iframe */}
                 <iframe
                   className="absolute top-0 left-0 w-full h-full rounded-2xl border-2 border-white/20 shadow-2xl group-hover:border-white/40 transition-all duration-300"
-                  src="https://www.youtube.com/embed/9MuAki_Cx9w?si=0s2Bb6GYxqO3ZML1&controls=1&loop=1&playlist=9MuAki_Cx9w"
+                  src="https://www.youtube.com/embed/9MuAki_Cx9w?si=0s2Bb6GYxqO3ZML1&controls=1"
                   title="YouTube video player"
                   allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   referrerPolicy="strict-origin-when-cross-origin"
