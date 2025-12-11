@@ -244,6 +244,35 @@ export default function HomePage() {
             })}
           </div>
 
+          {/* YouTube Video Embed */}
+          <div className="mt-12 sm:mt-16 md:mt-20 flex justify-center animate-fade-in-up animation-delay-800">
+            <div className="w-full max-w-6xl px-4 sm:px-6">
+              <div className="relative w-full group" style={{ paddingBottom: '56.25%' }}>
+                {/* Glow effect behind video */}
+                <div className="absolute -inset-2 bg-gradient-to-r from-cyan-500/30 via-purple-500/30 to-pink-500/30 rounded-2xl blur-xl opacity-60 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Border gradient */}
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 rounded-2xl opacity-80 group-hover:opacity-100 transition-opacity duration-300"></div>
+                
+                {/* Inner shadow container */}
+                <div className="absolute inset-0.5 bg-black/20 backdrop-blur-sm rounded-2xl"></div>
+                
+                {/* Video iframe */}
+                <iframe
+                  className="absolute top-0 left-0 w-full h-full rounded-2xl border-2 border-white/20 shadow-2xl group-hover:border-white/40 transition-all duration-300"
+                  src="https://www.youtube.com/embed/9MuAki_Cx9w?si=0s2Bb6GYxqO3ZML1&controls=1&loop=1&playlist=9MuAki_Cx9w"
+                  title="YouTube video player"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+                
+                {/* Shimmer effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -skew-x-12 opacity-0 group-hover:opacity-100 group-hover:animate-shimmer transition-opacity duration-500 rounded-2xl pointer-events-none"></div>
+              </div>
+            </div>
+          </div>
+
           {/* MICRO-PROOF BAR - optimized */}
           <div 
             className="mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-10 border-t border-white/20 animate-fade-in-up animation-delay-1000"
