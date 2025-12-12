@@ -126,9 +126,3 @@ Agrees to receive Beta updates: ${formData.consent ? 'Yes' : 'No'}`;
     );
   }
 }
-// asd
-// asd
-// asd
-// asd
-// asd
-// asd
